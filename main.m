@@ -4,6 +4,7 @@ data = data + importdata('data/data_50_1.txt') + importdata('data/data_50_2.txt'
 data = data + importdata('data/data_75_1.txt') + importdata('data/data_75_2.txt') + importdata('data/data_75_3.txt');
 data = data + importdata('data/data_100_1.txt') + importdata('data/data_100_2.txt') + importdata('data/data_100_3.txt');
 data = data/12;
+dt = 0.005;
 
 time = data(1:length(data)-1, 1) / 1000;
 angle = data(:, 2) / 180 * 3.141592653595 / 65.5;
