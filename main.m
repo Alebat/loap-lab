@@ -23,7 +23,7 @@ R = 0.056/2
 d = 0.10
 
 model = zpk([], [P2 P1], k/u*P1P2);
-time = 0:dt:5;
+time = 0:dt:3.5;
 sspeed = step(model, time);
 plot(time, sspeed);
 
