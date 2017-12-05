@@ -5,14 +5,17 @@ angle = data(:, 2) / 180 * 3.141592653595 / 65.5;
 speed = diff(angle) / dt;
 sspeed = speed;
 
-windowSize = 8;
-sspeed = filter((1/windowSize)*ones(1,windowSize), 1, sspeed);
-% sspeed = expmean(sspeed, .81);%.64);
+% windowSize = 3;
+% sspeed = filter((1/windowSize)*ones(1,windowSize), 1, sspeed);
+sspeed = expmean(sspeed, .81);%.64);
 
 if bplot == 1
     hold on;
     plot(time, speed);
     plot(time, sspeed);
+    line([t t], [0 .2]);
+    line(2*[t t], [0 .2]);
+    line(3*[t t], [0 .2]);
 end
 
 time_stable = .5;
@@ -26,10 +29,6 @@ t3 = floor(3*t/dt);
 y_t1 = sspeed(t1);
 y_t2 = sspeed(t2);
 y_t3 = sspeed(t3);
-
-line([t t], [0 .2]);
-line(2*[t t], [0 .2]);
-line(3*[t t], [0 .2]);
 
 k = y_inf;
 

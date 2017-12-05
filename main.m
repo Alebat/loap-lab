@@ -2,7 +2,7 @@
 
 dt = 0.005;
 R = 0.056/2;
-d = 0.10;
+d = 1.95;
 u = 1;
 time = 0:dt:3.5;
 t = 0.052;
@@ -58,7 +58,7 @@ plot(time, sspeed);
 % % --- SONAR DATA plot ---
 % hold on;
 % data = importdata('end_data/data_6.txt2f') + importdata('end_data/data_7.txt2f')+ importdata('end_data/data_8.txt2f') + importdata('end_data/data_9.txt2f') + importdata('end_data/data_10.txt2f');
-% data = data / 5;
-% sspeed = data(:, 2);
+% data = data / 5 ;
+% sspeed = data(:, 2) * 0.846153846 / 100;
 % plot(data(:, 1)/1000, sspeed);
 
