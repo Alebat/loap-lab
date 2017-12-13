@@ -16,7 +16,7 @@ data = data + importdata('data2/data_l6.txt') + importdata('data2/data_l7.txt') 
 data = data + importdata('data2/data_l9.txt');
 data = data/10;
 
-[lP1,lP2,lk] = poli(data, dt, t, 0);
+[lP1,lP2,lk] = poli(data, dt, t, 1);
 
 
 lP1P2 = lP1 * lP2;
@@ -26,9 +26,9 @@ lkk = lk/u*lP1*lP2;
 lP1
 lP2
 
-model = zpk([], [lP2 lP1], lk/u*lP1P2);
+modell = zpk([], [lP2 lP1], lk/u*lP1P2);
 
-sspeed = step(model, time);
+sspeed = step(modell, time);
 plot(time, sspeed);
 
 
@@ -49,8 +49,8 @@ rkk = rk/u*rP1*rP2;
 rP1
 rP2
 
-model = zpk([], [rP2 rP1], rk/u*rP1P2);
-sspeed = step(model, time);
+modelr = zpk([], [rP2 rP1], rk/u*rP1P2);
+sspeed = step(modelr, time);
 plot(time, sspeed);
 
 
