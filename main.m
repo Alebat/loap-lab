@@ -2,10 +2,10 @@
 
 dt = 0.005;
 R = 0.056/2;
-d = .0125;
+d = .125;
 u = 1;
 time = 0:dt:3.5;
-t = 0.052;
+t = 0.054;
 hold on;
 
 
@@ -39,7 +39,7 @@ data = data + importdata('data2/data_r6.txt') + importdata('data2/data_r7.txt') 
 data = data + importdata('data2/data_r9.txt');
 data = data/10;
 
-[rP1,rP2,rk] = poli(data, dt, t, 0);
+[rP1,rP2,rk] = poli(data, dt, t, 1);
 
 
 rP1P2 = rP1 * rP2;
@@ -53,7 +53,23 @@ modelr = zpk([], [rP2 rP1], rk/u*rP1P2);
 sspeed = step(modelr, time);
 plot(time, sspeed);
 
+% Left motor controller
+% from root locus C(s) = (s1 s + s2) / s
+s1 = 5;
+s2 = 100;
+q1 = s1 + dt * s2 / 2
+q2 = -s1 + dt * s2 / 2
 
+% C(q) = (q1 q + q2) / q
+
+% Right motor controller
+% from root locus C(s) = (s1 s + s2) / s
+s1 = 100;
+s2 = 22;
+q1r = s1 + dt * s2 / 2;
+q2r = -s1 + dt * s2 / 2;
+
+% C(q) = (q1 q + q2) / q
 
 % % --- SONAR DATA plot ---
 % hold on;
