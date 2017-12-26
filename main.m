@@ -78,3 +78,6 @@ q2r = -s1 + dt * s2 / 2;
 % sspeed = data(:, 2) * 0.846153846 / 100;
 % plot(data(:, 1)/1000, sspeed);
 
+
+modellc = modell * zpk([1 20], [1 0], 4.5);
+modelrc = modelr * zpk([1 20], [1 0], 4);
