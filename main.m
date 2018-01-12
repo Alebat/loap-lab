@@ -26,6 +26,7 @@ lkk = lk/u*lP1*lP2;
 lP1
 lP2
 
+total = tf([.1], [1 0 0]);
 modell = zpk([], [lP2 lP1], lk/u*lP1P2);
 
 sspeed = step(modell, time);
