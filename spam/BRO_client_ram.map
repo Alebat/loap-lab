@@ -50,10 +50,6 @@ Archive member included because of file (symbol)
                               ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(flash_loader.oram) (ecrobot_init_usb)
 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(flashprog.oram)
                               ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(flash_loader.oram) (flash_write_page)
-/home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_atan.o)
-                              build/BRO_spam_client.o (atan)
-/home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_fabs.o)
-                              /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_atan.o) (fabs)
 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_sin.o)
                               build/common/simul_config.o (sinf)
 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_round.o)
@@ -89,7 +85,7 @@ Archive member included because of file (symbol)
 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_muldivdf3.o)
                               build/BRO_spam_client.o (__muldf3)
 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_cmpdf2.o)
-                              ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(colorsensor.o) (__gtdf2)
+                              build/BRO_spam_client.o (__gtdf2)
 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_fixdfsi.o)
                               build/common/simul_config.o (__fixdfsi)
 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_truncdfsf2.o)
@@ -144,6 +140,7 @@ tcb_next            0x4               build/./kernel_cfg.o
 tcb_curpri          0x4               build/./kernel_cfg.o
 mcd2                0x20              build/BRO_spam_client.o
 tcb_tstat           0x4               build/./kernel_cfg.o
+last_elapsed_time   0x4               build/BRO_spam_client.o
 data_abort_pc       0x4               ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(data_abort.oram)
 sim_status          0x4               build/BRO_spam_client.o
 nextpri             0x1               build/kernel/task.o
@@ -294,16 +291,18 @@ Discarded input sections
                 0x00000000       0x1c build/BRO_spam_client.o
  .text.mcd_getSpeed
                 0x00000000       0x50 build/BRO_spam_client.o
- .rodata.SNR_TIME_PERIOD
-                0x00000000        0x4 build/BRO_spam_client.o
- .rodata.TIME_PERIOD
-                0x00000000        0x4 build/BRO_spam_client.o
  .rodata.EXPMEAN_FACTOR
                 0x00000000        0x4 build/BRO_spam_client.o
- .rodata.SNR_R  0x00000000        0x4 build/BRO_spam_client.o
  .rodata.MOTOR_PORT
                 0x00000000        0x4 build/BRO_spam_client.o
  .rodata.MOTOR_PORT2
+                0x00000000        0x4 build/BRO_spam_client.o
+ .bss.sonar_ms_count
+                0x00000000        0x4 build/BRO_spam_client.o
+ .data.sonar_read_ms
+                0x00000000        0x4 build/BRO_spam_client.o
+ .rodata.SNR_R  0x00000000        0x4 build/BRO_spam_client.o
+ .rodata.SONAR_SAMPLING
                 0x00000000        0x4 build/BRO_spam_client.o
  .text          0x00000000        0x0 build/common/bt_comm.o
  .data          0x00000000        0x0 build/common/bt_comm.o
@@ -702,12 +701,6 @@ Discarded input sections
                 0x00000000       0x20 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(flashprog.oram)
  .text.flash_write
                 0x00000000       0x20 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(flashprog.oram)
- .data          0x00000000        0x0 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_atan.o)
- .bss           0x00000000        0x0 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_atan.o)
- .eh_frame      0x00000000       0x3c /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_atan.o)
- .data          0x00000000        0x0 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_fabs.o)
- .bss           0x00000000        0x0 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_fabs.o)
- .eh_frame      0x00000000       0x2c /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_fabs.o)
  .data          0x00000000        0x0 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_sin.o)
  .bss           0x00000000        0x0 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_sin.o)
  .eh_frame      0x00000000       0x30 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_sin.o)
@@ -1281,43 +1274,40 @@ END GROUP
  .data.bt_status
                 0x00205c70        0x1 build/ecrobot_bluetooth.o
  *fill*         0x00205c71        0x3 00
+ .data.left_ct  0x00205c74        0x4 build/BRO_spam_client.o
+                0x00205c74                left_ct
  .data.right_ct
-                0x00205c74        0x4 build/BRO_spam_client.o
-                0x00205c74                right_ct
- .data.left_ct  0x00205c78        0x4 build/BRO_spam_client.o
-                0x00205c78                left_ct
- .data.sonar_read_ms
-                0x00205c7c        0x4 build/BRO_spam_client.o
-                0x00205c7c                sonar_read_ms
+                0x00205c78        0x4 build/BRO_spam_client.o
+                0x00205c78                right_ct
  .data.distance_state
-                0x00205c80       0x10 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
+                0x00205c7c       0x10 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
  .data.deviceStatus
-                0x00205c90        0x1 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
+                0x00205c8c        0x1 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
  .bss.data.2752
-                0x00205c91        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
- .data.named    0x00205c95       0x22 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(udp.oram)
- .data.snd      0x00205cb7       0x1a ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(udp.oram)
- *fill*         0x00205cd1        0x3 00
+                0x00205c8d        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
+ .data.named    0x00205c91       0x22 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(udp.oram)
+ .data.snd      0x00205cb3       0x1a ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(udp.oram)
+ *fill*         0x00205ccd        0x3 00
  .data.configured
-                0x00205cd4        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(udp.oram)
- .data.mode     0x00205cd8        0x1 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_spi.oram)
-                0x00205cd8                mode
- *fill*         0x00205cd9        0x3 00
- .bss.data      0x00205cdc        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_spi.oram)
-                0x00205cdc                data
+                0x00205cd0        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(udp.oram)
+ .data.mode     0x00205cd4        0x1 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_spi.oram)
+                0x00205cd4                mode
+ *fill*         0x00205cd5        0x3 00
+ .bss.data      0x00205cd8        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_spi.oram)
+                0x00205cd8                data
  .data.display_auto_update
-                0x00205ce0        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(display.oram)
-                0x00205ce0                display_auto_update
+                0x00205cdc        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(display.oram)
+                0x00205cdc                display_auto_update
  .data.display_buffer
-                0x00205ce4        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(display.oram)
+                0x00205ce0        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(display.oram)
                 0x00205cf0                . = ALIGN (0x10)
- *fill*         0x00205ce8        0x8 00
+ *fill*         0x00205ce4        0xc 00
                 0x00205c70                __data_ram_start__ = ADDR (.data)
                 0x00205cf0                __data_ram_end__ = (ADDR (.data) + SIZEOF (.data))
                 0x00205c70                __data_load_start__ = LOADADDR (.data)
                 0x00205cf0                __data_load_end__ = (__data_load_start__ + SIZEOF (.data))
 
-.text           0x00205cf0     0x52a0
+.text           0x00205cf0     0x4cb0
                 0x00205cf0                . = ALIGN (0x10)
  *(*.text *.text.* *.glue*)
  .glue_7        0x00205cf0       0x18 linker stubs
@@ -1529,346 +1519,340 @@ END GROUP
                 0x00207380       0x4c build/BRO_spam_client.o
                 0x00207380                terminate_sim
  .text.TaskMainDisplayTask
-                0x002073cc      0x11c build/BRO_spam_client.o
+                0x002073cc      0x130 build/BRO_spam_client.o
                 0x002073cc                TaskMainDisplayTask
  .text.TaskMainSimulTask
-                0x002074e8      0x4c0 build/BRO_spam_client.o
-                0x002074e8                TaskMainSimulTask
+                0x002074fc      0x268 build/BRO_spam_client.o
+                0x002074fc                TaskMainSimulTask
  .text.TaskMainMotorTask
-                0x002079a8       0xd8 build/BRO_spam_client.o
-                0x002079a8                TaskMainMotorTask
+                0x00207764       0xd8 build/BRO_spam_client.o
+                0x00207764                TaskMainMotorTask
  .text.TaskMainConfigTask
-                0x00207a80       0x98 build/BRO_spam_client.o
-                0x00207a80                TaskMainConfigTask
+                0x0020783c       0x98 build/BRO_spam_client.o
+                0x0020783c                TaskMainConfigTask
  .text.user_1ms_isr_type2
-                0x00207b18       0x1c build/BRO_spam_client.o
-                0x00207b18                user_1ms_isr_type2
+                0x002078d4       0x1c build/BRO_spam_client.o
+                0x002078d4                user_1ms_isr_type2
  .text.ecrobot_device_terminate
-                0x00207b34       0x14 build/BRO_spam_client.o
-                0x00207b34                ecrobot_device_terminate
+                0x002078f0       0x14 build/BRO_spam_client.o
+                0x002078f0                ecrobot_device_terminate
  .text.ecrobot_device_initialize
-                0x00207b48        0xc build/BRO_spam_client.o
-                0x00207b48                ecrobot_device_initialize
+                0x00207904        0xc build/BRO_spam_client.o
+                0x00207904                ecrobot_device_initialize
  .text.encode_int
-                0x00207b54       0x24 build/common/bt_comm.o
-                0x00207b54                encode_int
+                0x00207910       0x24 build/common/bt_comm.o
+                0x00207910                encode_int
  .text.decode_int
-                0x00207b78       0x3c build/common/bt_comm.o
-                0x00207b78                decode_int
+                0x00207934       0x3c build/common/bt_comm.o
+                0x00207934                decode_int
  .text.decode_config
-                0x00207bb4       0x58 build/common/bt_comm.o
-                0x00207bb4                decode_config
+                0x00207970       0x58 build/common/bt_comm.o
+                0x00207970                decode_config
  .text.decode_config_msg
-                0x00207c0c       0x1c build/common/bt_comm.o
-                0x00207c0c                decode_config_msg
+                0x002079c8       0x1c build/common/bt_comm.o
+                0x002079c8                decode_config_msg
  .text.encode_sim_data_msg
-                0x00207c28       0x34 build/common/bt_comm.o
-                0x00207c28                encode_sim_data_msg
+                0x002079e4       0x34 build/common/bt_comm.o
+                0x002079e4                encode_sim_data_msg
  .text.get_duration
-                0x00207c5c       0x10 build/common/simul_config.o
-                0x00207c5c                get_duration
+                0x00207a18       0x10 build/common/simul_config.o
+                0x00207a18                get_duration
  .text.get_sampling_time
-                0x00207c6c       0x10 build/common/simul_config.o
-                0x00207c6c                get_sampling_time
+                0x00207a28       0x10 build/common/simul_config.o
+                0x00207a28                get_sampling_time
  .text.get_frequency
-                0x00207c7c       0x10 build/common/simul_config.o
-                0x00207c7c                get_frequency
+                0x00207a38       0x10 build/common/simul_config.o
+                0x00207a38                get_frequency
  .text.get_speed
-                0x00207c8c       0x90 build/common/simul_config.o
-                0x00207c8c                get_speed
+                0x00207a48       0x90 build/common/simul_config.o
+                0x00207a48                get_speed
  .text.ecrobot_init_i2c
-                0x00207d1c       0x2c ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
-                0x00207d1c                ecrobot_init_i2c
+                0x00207ad8       0x2c ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
+                0x00207ad8                ecrobot_init_i2c
  .text.getDistance
-                0x00207d48       0x20 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
+                0x00207b04       0x20 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
  .text.ecrobot_init_sonar_sensor
-                0x00207d68       0x10 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
-                0x00207d68                ecrobot_init_sonar_sensor
+                0x00207b24       0x10 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
+                0x00207b24                ecrobot_init_sonar_sensor
  .text.ecrobot_get_sonar_sensor
-                0x00207d78       0x48 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
-                0x00207d78                ecrobot_get_sonar_sensor
+                0x00207b34       0x48 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
+                0x00207b34                ecrobot_get_sonar_sensor
  .text.ecrobot_term_sonar_sensor
-                0x00207dc0       0x20 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
-                0x00207dc0                ecrobot_term_sonar_sensor
+                0x00207b7c       0x20 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
+                0x00207b7c                ecrobot_term_sonar_sensor
  .text.ecrobot_get_battery_voltage
-                0x00207de0        0xc ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
-                0x00207de0                ecrobot_get_battery_voltage
+                0x00207b9c        0xc ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
+                0x00207b9c                ecrobot_get_battery_voltage
  .text.ecrobot_get_button_state
-                0x00207dec        0xc ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
-                0x00207dec                ecrobot_get_button_state
+                0x00207ba8        0xc ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
+                0x00207ba8                ecrobot_get_button_state
  .text.ecrobot_init_nxtstate
-                0x00207df8       0x28 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
-                0x00207df8                ecrobot_init_nxtstate
+                0x00207bb4       0x28 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
+                0x00207bb4                ecrobot_init_nxtstate
  .text.ecrobot_poll_nxtstate
-                0x00207e20       0x64 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
-                0x00207e20                ecrobot_poll_nxtstate
+                0x00207bdc       0x64 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
+                0x00207bdc                ecrobot_poll_nxtstate
  .text.ecrobot_setDeviceInitialized
-                0x00207e84       0x18 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
-                0x00207e84                ecrobot_setDeviceInitialized
+                0x00207c40       0x18 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
+                0x00207c40                ecrobot_setDeviceInitialized
  .text.ecrobot_initDeviceStatus
-                0x00207e9c        0xc ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
-                0x00207e9c                ecrobot_initDeviceStatus
+                0x00207c58        0xc ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
+                0x00207c58                ecrobot_initDeviceStatus
  .text.ecrobot_bmp2lcd
-                0x00207ea8      0x1c8 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
-                0x00207ea8                ecrobot_bmp2lcd
+                0x00207c64      0x1c8 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
+                0x00207c64                ecrobot_bmp2lcd
  .text.ecrobot_status_monitor
-                0x00208070      0x138 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
-                0x00208070                ecrobot_status_monitor
+                0x00207e2c      0x138 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
+                0x00207e2c                ecrobot_status_monitor
  .text.StartupHook
-                0x002081a8        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(osek_hook.o)
-                0x002081a8                StartupHook
+                0x00207f64        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(osek_hook.o)
+                0x00207f64                StartupHook
  .text.PreTaskHook
-                0x002081ac        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(osek_hook.o)
-                0x002081ac                PreTaskHook
+                0x00207f68        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(osek_hook.o)
+                0x00207f68                PreTaskHook
  .text.PostTaskHook
-                0x002081b0        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(osek_hook.o)
-                0x002081b0                PostTaskHook
+                0x00207f6c        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(osek_hook.o)
+                0x00207f6c                PostTaskHook
  .text.ErrorHook
-                0x002081b4        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(osek_hook.o)
-                0x002081b4                ErrorHook
+                0x00207f70        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(osek_hook.o)
+                0x00207f70                ErrorHook
  .text.ShutdownHook
-                0x002081b8        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(osek_hook.o)
-                0x002081b8                ShutdownHook
- .text          0x002081bc      0x348 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_atan.o)
-                0x002081bc                atan
- .text          0x00208504       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_fabs.o)
-                0x00208504                fabs
- .text          0x00208518       0x88 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_sin.o)
-                0x00208518                sinf
- .text          0x002085a0       0xa4 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_round.o)
-                0x002085a0                round
- .text          0x00208644      0x304 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-ef_rem_pio2.o)
-                0x00208644                __ieee754_rem_pio2f
- .text          0x00208948      0x190 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_cos.o)
-                0x00208948                __kernel_cosf
- .text          0x00208ad8      0x6b0 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_rem_pio2.o)
-                0x00208ad8                __kernel_rem_pio2f
- .text          0x00209188      0x104 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_sin.o)
-                0x00209188                __kernel_sinf
- .text          0x0020928c        0xc /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_fabs.o)
-                0x0020928c                fabsf
- .text          0x00209298       0x94 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_floor.o)
-                0x00209298                floorf
- .text          0x0020932c       0xd4 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_scalbn.o)
-                0x0020932c                scalbnf
- .text          0x00209400       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_copysign.o)
-                0x00209400                copysignf
- .text          0x00209414       0x8c /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_udivsi3.o)
-                0x00209414                __udivsi3
-                0x00209414                __aeabi_uidiv
-                0x00209490                __aeabi_uidivmod
- .text          0x002094a0       0xc8 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_umodsi3.o)
-                0x002094a0                __umodsi3
- .text          0x00209568        0x4 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_dvmd_tls.o)
-                0x00209568                __aeabi_ldiv0
-                0x00209568                __div0
-                0x00209568                __aeabi_idiv0
- .text          0x0020956c      0x430 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_addsubdf3.o)
-                0x0020956c                __aeabi_drsub
-                0x00209574                __aeabi_dsub
-                0x00209574                __subdf3
-                0x00209578                __adddf3
-                0x00209578                __aeabi_dadd
-                0x00209888                __aeabi_ui2d
-                0x00209888                __floatunsidf
-                0x002098b0                __floatsidf
-                0x002098b0                __aeabi_i2d
-                0x002098dc                __extendsfdf2
-                0x002098dc                __aeabi_f2d
-                0x0020991c                __aeabi_ul2d
-                0x0020991c                __floatundidf
-                0x00209930                __floatdidf
-                0x00209930                __aeabi_l2d
- .text          0x0020999c      0x49c /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_muldivdf3.o)
-                0x0020999c                __aeabi_dmul
-                0x0020999c                __muldf3
-                0x00209c2c                __aeabi_ddiv
-                0x00209c2c                __divdf3
- .text          0x00209e38      0x140 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_cmpdf2.o)
-                0x00209e38                __gtdf2
-                0x00209e38                __gedf2
-                0x00209e40                __ltdf2
-                0x00209e40                __ledf2
-                0x00209e48                __cmpdf2
-                0x00209e48                __eqdf2
-                0x00209e48                __nedf2
-                0x00209ecc                __aeabi_cdrcmple
-                0x00209ee8                __aeabi_cdcmple
-                0x00209ee8                __aeabi_cdcmpeq
-                0x00209f00                __aeabi_dcmpeq
-                0x00209f18                __aeabi_dcmplt
-                0x00209f30                __aeabi_dcmple
-                0x00209f48                __aeabi_dcmpge
-                0x00209f60                __aeabi_dcmpgt
- .text          0x00209f78       0x5c /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_fixdfsi.o)
-                0x00209f78                __fixdfsi
-                0x00209f78                __aeabi_d2iz
- .text          0x00209fd4       0xa0 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_truncdfsf2.o)
-                0x00209fd4                __aeabi_d2f
-                0x00209fd4                __truncdfsf2
- .text          0x0020a074      0x2ac /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_addsubsf3.o)
-                0x0020a074                __aeabi_frsub
-                0x0020a07c                __subsf3
-                0x0020a07c                __aeabi_fsub
-                0x0020a080                __aeabi_fadd
-                0x0020a080                __addsf3
-                0x0020a23c                __aeabi_ui2f
-                0x0020a23c                __floatunsisf
-                0x0020a244                __aeabi_i2f
-                0x0020a244                __floatsisf
-                0x0020a264                __floatundisf
-                0x0020a264                __aeabi_ul2f
-                0x0020a274                __floatdisf
-                0x0020a274                __aeabi_l2f
- .text          0x0020a320      0x2f8 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_muldivsf3.o)
-                0x0020a320                __mulsf3
-                0x0020a320                __aeabi_fmul
-                0x0020a4b8                __divsf3
-                0x0020a4b8                __aeabi_fdiv
- .text          0x0020a618      0x110 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_cmpsf2.o)
-                0x0020a618                __gtsf2
-                0x0020a618                __gesf2
-                0x0020a620                __lesf2
-                0x0020a620                __ltsf2
-                0x0020a628                __nesf2
-                0x0020a628                __eqsf2
-                0x0020a628                __cmpsf2
-                0x0020a688                __aeabi_cfrcmple
-                0x0020a698                __aeabi_cfcmple
-                0x0020a698                __aeabi_cfcmpeq
-                0x0020a6b0                __aeabi_fcmpeq
-                0x0020a6c8                __aeabi_fcmplt
-                0x0020a6e0                __aeabi_fcmple
-                0x0020a6f8                __aeabi_fcmpge
-                0x0020a710                __aeabi_fcmpgt
- .text          0x0020a728       0x5c /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_fixsfsi.o)
-                0x0020a728                __fixsfsi
-                0x0020a728                __aeabi_f2iz
- .text          0x0020a784       0x80 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memcpy.o)
-                0x0020a784                memcpy
- .text          0x0020a804       0x94 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memset.o)
-                0x0020a804                memset
- .text          0x0020a898       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcpy.o)
-                0x0020a898                strcpy
- .text          0x0020a8a8       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strlen.o)
-                0x0020a8a8                strlen
-                0x0020a8c0                . = ALIGN (0x10)
- *fill*         0x0020a8b8        0x8 00
+                0x00207f74        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(osek_hook.o)
+                0x00207f74                ShutdownHook
+ .text          0x00207f78       0x88 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_sin.o)
+                0x00207f78                sinf
+ .text          0x00208000       0xa4 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_round.o)
+                0x00208000                round
+ .text          0x002080a4      0x304 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-ef_rem_pio2.o)
+                0x002080a4                __ieee754_rem_pio2f
+ .text          0x002083a8      0x190 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_cos.o)
+                0x002083a8                __kernel_cosf
+ .text          0x00208538      0x6b0 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_rem_pio2.o)
+                0x00208538                __kernel_rem_pio2f
+ .text          0x00208be8      0x104 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_sin.o)
+                0x00208be8                __kernel_sinf
+ .text          0x00208cec        0xc /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_fabs.o)
+                0x00208cec                fabsf
+ .text          0x00208cf8       0x94 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_floor.o)
+                0x00208cf8                floorf
+ .text          0x00208d8c       0xd4 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_scalbn.o)
+                0x00208d8c                scalbnf
+ .text          0x00208e60       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_copysign.o)
+                0x00208e60                copysignf
+ .text          0x00208e74       0x8c /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_udivsi3.o)
+                0x00208e74                __udivsi3
+                0x00208e74                __aeabi_uidiv
+                0x00208ef0                __aeabi_uidivmod
+ .text          0x00208f00       0xc8 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_umodsi3.o)
+                0x00208f00                __umodsi3
+ .text          0x00208fc8        0x4 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_dvmd_tls.o)
+                0x00208fc8                __aeabi_ldiv0
+                0x00208fc8                __div0
+                0x00208fc8                __aeabi_idiv0
+ .text          0x00208fcc      0x430 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_addsubdf3.o)
+                0x00208fcc                __aeabi_drsub
+                0x00208fd4                __aeabi_dsub
+                0x00208fd4                __subdf3
+                0x00208fd8                __adddf3
+                0x00208fd8                __aeabi_dadd
+                0x002092e8                __aeabi_ui2d
+                0x002092e8                __floatunsidf
+                0x00209310                __floatsidf
+                0x00209310                __aeabi_i2d
+                0x0020933c                __extendsfdf2
+                0x0020933c                __aeabi_f2d
+                0x0020937c                __aeabi_ul2d
+                0x0020937c                __floatundidf
+                0x00209390                __floatdidf
+                0x00209390                __aeabi_l2d
+ .text          0x002093fc      0x49c /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_muldivdf3.o)
+                0x002093fc                __aeabi_dmul
+                0x002093fc                __muldf3
+                0x0020968c                __aeabi_ddiv
+                0x0020968c                __divdf3
+ .text          0x00209898      0x140 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_cmpdf2.o)
+                0x00209898                __gtdf2
+                0x00209898                __gedf2
+                0x002098a0                __ltdf2
+                0x002098a0                __ledf2
+                0x002098a8                __cmpdf2
+                0x002098a8                __eqdf2
+                0x002098a8                __nedf2
+                0x0020992c                __aeabi_cdrcmple
+                0x00209948                __aeabi_cdcmple
+                0x00209948                __aeabi_cdcmpeq
+                0x00209960                __aeabi_dcmpeq
+                0x00209978                __aeabi_dcmplt
+                0x00209990                __aeabi_dcmple
+                0x002099a8                __aeabi_dcmpge
+                0x002099c0                __aeabi_dcmpgt
+ .text          0x002099d8       0x5c /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_fixdfsi.o)
+                0x002099d8                __fixdfsi
+                0x002099d8                __aeabi_d2iz
+ .text          0x00209a34       0xa0 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_truncdfsf2.o)
+                0x00209a34                __aeabi_d2f
+                0x00209a34                __truncdfsf2
+ .text          0x00209ad4      0x2ac /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_addsubsf3.o)
+                0x00209ad4                __aeabi_frsub
+                0x00209adc                __subsf3
+                0x00209adc                __aeabi_fsub
+                0x00209ae0                __aeabi_fadd
+                0x00209ae0                __addsf3
+                0x00209c9c                __aeabi_ui2f
+                0x00209c9c                __floatunsisf
+                0x00209ca4                __aeabi_i2f
+                0x00209ca4                __floatsisf
+                0x00209cc4                __floatundisf
+                0x00209cc4                __aeabi_ul2f
+                0x00209cd4                __floatdisf
+                0x00209cd4                __aeabi_l2f
+ .text          0x00209d80      0x2f8 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_muldivsf3.o)
+                0x00209d80                __mulsf3
+                0x00209d80                __aeabi_fmul
+                0x00209f18                __divsf3
+                0x00209f18                __aeabi_fdiv
+ .text          0x0020a078      0x110 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_cmpsf2.o)
+                0x0020a078                __gtsf2
+                0x0020a078                __gesf2
+                0x0020a080                __lesf2
+                0x0020a080                __ltsf2
+                0x0020a088                __nesf2
+                0x0020a088                __eqsf2
+                0x0020a088                __cmpsf2
+                0x0020a0e8                __aeabi_cfrcmple
+                0x0020a0f8                __aeabi_cfcmple
+                0x0020a0f8                __aeabi_cfcmpeq
+                0x0020a110                __aeabi_fcmpeq
+                0x0020a128                __aeabi_fcmplt
+                0x0020a140                __aeabi_fcmple
+                0x0020a158                __aeabi_fcmpge
+                0x0020a170                __aeabi_fcmpgt
+ .text          0x0020a188       0x5c /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_fixsfsi.o)
+                0x0020a188                __fixsfsi
+                0x0020a188                __aeabi_f2iz
+ .text          0x0020a1e4       0x80 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memcpy.o)
+                0x0020a1e4                memcpy
+ .text          0x0020a264       0x94 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memset.o)
+                0x0020a264                memset
+ .text          0x0020a2f8       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcpy.o)
+                0x0020a2f8                strcpy
+ .text          0x0020a308       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strlen.o)
+                0x0020a308                strlen
+                0x0020a320                . = ALIGN (0x10)
+ *fill*         0x0020a318        0x8 00
  *(*.rodata *.rodata.*)
  .rodata.search_table.1018
-                0x0020a8c0       0x10 build/kernel/task.o
+                0x0020a320       0x10 build/kernel/task.o
  .rodata.alminib_cback
-                0x0020a8d0        0xc build/./kernel_cfg.o
-                0x0020a8d0                alminib_cback
+                0x0020a330        0xc build/./kernel_cfg.o
+                0x0020a330                alminib_cback
  .rodata.SimConfigGlobal
-                0x0020a8dc        0x1 build/./kernel_cfg.o
-                0x0020a8dc                SimConfigGlobal
+                0x0020a33c        0x1 build/./kernel_cfg.o
+                0x0020a33c                SimConfigGlobal
  .rodata.tnum_resource
-                0x0020a8dd        0x1 build/./kernel_cfg.o
-                0x0020a8dd                tnum_resource
- *fill*         0x0020a8de        0x2 00
+                0x0020a33d        0x1 build/./kernel_cfg.o
+                0x0020a33d                tnum_resource
+ *fill*         0x0020a33e        0x2 00
  .rodata.tinib_maxact
-                0x0020a8e0        0x4 build/./kernel_cfg.o
-                0x0020a8e0                tinib_maxact
+                0x0020a340        0x4 build/./kernel_cfg.o
+                0x0020a340                tinib_maxact
  .rodata.cntinib_tickbase
-                0x0020a8e4        0x4 build/./kernel_cfg.o
-                0x0020a8e4                cntinib_tickbase
+                0x0020a344        0x4 build/./kernel_cfg.o
+                0x0020a344                cntinib_tickbase
  .rodata.alminib_cntid
-                0x0020a8e8        0x4 build/./kernel_cfg.o
-                0x0020a8e8                alminib_cntid
+                0x0020a348        0x4 build/./kernel_cfg.o
+                0x0020a348                alminib_cntid
  .rodata.tnum_task
-                0x0020a8ec        0x1 build/./kernel_cfg.o
-                0x0020a8ec                tnum_task
- *fill*         0x0020a8ed        0x3 00
+                0x0020a34c        0x1 build/./kernel_cfg.o
+                0x0020a34c                tnum_task
+ *fill*         0x0020a34d        0x3 00
  .rodata.cntinib_maxval
-                0x0020a8f0        0x4 build/./kernel_cfg.o
-                0x0020a8f0                cntinib_maxval
+                0x0020a350        0x4 build/./kernel_cfg.o
+                0x0020a350                cntinib_maxval
  .rodata.MotorTaskAlarm
-                0x0020a8f4        0x1 build/./kernel_cfg.o
-                0x0020a8f4                MotorTaskAlarm
- *fill*         0x0020a8f5        0x3 00
+                0x0020a354        0x1 build/./kernel_cfg.o
+                0x0020a354                MotorTaskAlarm
+ *fill*         0x0020a355        0x3 00
  .rodata.tinib_stksz
-                0x0020a8f8        0x8 build/./kernel_cfg.o
-                0x0020a8f8                tinib_stksz
+                0x0020a358        0x8 build/./kernel_cfg.o
+                0x0020a358                tinib_stksz
  .rodata.alminib_cycle
-                0x0020a900        0xc build/./kernel_cfg.o
-                0x0020a900                alminib_cycle
+                0x0020a360        0xc build/./kernel_cfg.o
+                0x0020a360                alminib_cycle
  .rodata.tinib_inipri
-                0x0020a90c        0x4 build/./kernel_cfg.o
-                0x0020a90c                tinib_inipri
+                0x0020a36c        0x4 build/./kernel_cfg.o
+                0x0020a36c                tinib_inipri
  .rodata.SimTermEvt
-                0x0020a910        0x4 build/./kernel_cfg.o
-                0x0020a910                SimTermEvt
+                0x0020a370        0x4 build/./kernel_cfg.o
+                0x0020a370                SimTermEvt
  .rodata.cntinib_maxval2
-                0x0020a914        0x4 build/./kernel_cfg.o
-                0x0020a914                cntinib_maxval2
+                0x0020a374        0x4 build/./kernel_cfg.o
+                0x0020a374                cntinib_maxval2
  .rodata.tinib_stk
-                0x0020a918       0x10 build/./kernel_cfg.o
-                0x0020a918                tinib_stk
+                0x0020a378       0x10 build/./kernel_cfg.o
+                0x0020a378                tinib_stk
  .rodata.isrinib_intpri
-                0x0020a928        0x4 build/./kernel_cfg.o
-                0x0020a928                isrinib_intpri
+                0x0020a388        0x4 build/./kernel_cfg.o
+                0x0020a388                isrinib_intpri
  .rodata.tnum_exttask
-                0x0020a92c        0x1 build/./kernel_cfg.o
-                0x0020a92c                tnum_exttask
+                0x0020a38c        0x1 build/./kernel_cfg.o
+                0x0020a38c                tnum_exttask
  .rodata.tnum_counter
-                0x0020a92d        0x1 build/./kernel_cfg.o
-                0x0020a92d                tnum_counter
+                0x0020a38d        0x1 build/./kernel_cfg.o
+                0x0020a38d                tnum_counter
  .rodata.SimulTaskAlarm
-                0x0020a92e        0x1 build/./kernel_cfg.o
-                0x0020a92e                SimulTaskAlarm
- *fill*         0x0020a92f        0x1 00
+                0x0020a38e        0x1 build/./kernel_cfg.o
+                0x0020a38e                SimulTaskAlarm
+ *fill*         0x0020a38f        0x1 00
  .rodata.tinib_autoact
-                0x0020a930        0x4 build/./kernel_cfg.o
-                0x0020a930                tinib_autoact
+                0x0020a390        0x4 build/./kernel_cfg.o
+                0x0020a390                tinib_autoact
  .rodata.SysTimerCnt
-                0x0020a934        0x1 build/./kernel_cfg.o
-                0x0020a934                SysTimerCnt
+                0x0020a394        0x1 build/./kernel_cfg.o
+                0x0020a394                SysTimerCnt
  .rodata.ConfigTask
-                0x0020a935        0x1 build/./kernel_cfg.o
-                0x0020a935                ConfigTask
+                0x0020a395        0x1 build/./kernel_cfg.o
+                0x0020a395                ConfigTask
  .rodata.tnum_alarm
-                0x0020a936        0x1 build/./kernel_cfg.o
-                0x0020a936                tnum_alarm
- *fill*         0x0020a937        0x1 00
+                0x0020a396        0x1 build/./kernel_cfg.o
+                0x0020a396                tnum_alarm
+ *fill*         0x0020a397        0x1 00
  .rodata.cntinib_mincyc
-                0x0020a938        0x4 build/./kernel_cfg.o
-                0x0020a938                cntinib_mincyc
+                0x0020a398        0x4 build/./kernel_cfg.o
+                0x0020a398                cntinib_mincyc
  .rodata.resinib_ceilpri
-                0x0020a93c        0x4 build/./kernel_cfg.o
-                0x0020a93c                resinib_ceilpri
+                0x0020a39c        0x4 build/./kernel_cfg.o
+                0x0020a39c                resinib_ceilpri
  .rodata.tinib_exepri
-                0x0020a940        0x4 build/./kernel_cfg.o
-                0x0020a940                tinib_exepri
+                0x0020a3a0        0x4 build/./kernel_cfg.o
+                0x0020a3a0                tinib_exepri
  .rodata.tinib_task
-                0x0020a944       0x10 build/./kernel_cfg.o
-                0x0020a944                tinib_task
+                0x0020a3a4       0x10 build/./kernel_cfg.o
+                0x0020a3a4                tinib_task
  .rodata.alminib_almval
-                0x0020a954        0xc build/./kernel_cfg.o
-                0x0020a954                alminib_almval
+                0x0020a3b4        0xc build/./kernel_cfg.o
+                0x0020a3b4                alminib_almval
  .rodata.alminib_autosta
-                0x0020a960        0x4 build/./kernel_cfg.o
-                0x0020a960                alminib_autosta
+                0x0020a3c0        0x4 build/./kernel_cfg.o
+                0x0020a3c0                alminib_autosta
  .rodata.str1.1
-                0x0020a964       0x6c build/ecrobot_base.o
+                0x0020a3c4       0x6c build/ecrobot_base.o
  .rodata.exec_addr
-                0x0020a9d0        0x4 build/ecrobot_base.o
-                0x0020a9d0                exec_addr
+                0x0020a430        0x4 build/ecrobot_base.o
+                0x0020a430                exec_addr
  .rodata.str1.1
-                0x0020a9d4       0x50 build/BRO_spam_client.o
+                0x0020a434       0x50 build/BRO_spam_client.o
  .rodata.END_SIMULATION
-                0x0020aa24        0x8 build/common/bt_comm.o
-                0x0020aa24                END_SIMULATION
+                0x0020a484        0x8 build/common/bt_comm.o
+                0x0020a484                END_SIMULATION
  .rodata.str1.4
-                0x0020aa2c       0x84 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
- .rodata        0x0020aab0       0x40 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_atan.o)
- .rodata        0x0020aaf0      0x398 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-ef_rem_pio2.o)
- .rodata        0x0020ae88       0x38 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_rem_pio2.o)
- .rodata.stub   0x0020aec0       0xc8 linker stubs
-                0x0020af90                . = ALIGN (0x10)
- *fill*         0x0020af88        0x8 00
+                0x0020a48c       0x84 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
+ .rodata        0x0020a510      0x398 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-ef_rem_pio2.o)
+ .rodata        0x0020a8a8       0x38 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_rem_pio2.o)
+ .rodata.stub   0x0020a8e0       0xc0 linker stubs
+                0x0020a9a0                . = ALIGN (0x10)
  *(*.gnu.linkonce.* .gcc_except_table)
-                0x0020af90                . = ALIGN (0x10)
+                0x0020a9a0                . = ALIGN (0x10)
 
 .vfp11_veneer   0x00205cf0        0x0
  .vfp11_veneer  0x00000000        0x0 linker stubs
@@ -1876,236 +1860,210 @@ END GROUP
 .v4_bx          0x00205cf0        0x0
  .v4_bx         0x00000000        0x0 linker stubs
 
-.tors           0x0020af90        0x0
-                0x0020af90                . = ALIGN (0x10)
-                0x0020af90                __ctor_begin = .
+.tors           0x0020a9a0        0x0
+                0x0020a9a0                . = ALIGN (0x10)
+                0x0020a9a0                __ctor_begin = .
  *(*.ctors*)
-                0x0020af90                __ctor_end = .
-                0x0020af90                . = ALIGN (0x10)
-                0x0020af90                __dtor_begin = .
+                0x0020a9a0                __ctor_end = .
+                0x0020a9a0                . = ALIGN (0x10)
+                0x0020a9a0                __dtor_begin = .
  *(*.dtors*)
-                0x0020af90                __dtor_end = .
-                0x0020af90                . = ALIGN (0x10)
+                0x0020a9a0                __dtor_end = .
+                0x0020a9a0                . = ALIGN (0x10)
 
-.bss            0x0020af90     0x1af8
+.bss            0x0020a9a0     0x1adc
  *(*.bss *.bss.*)
  .bss.ready_queue_first
-                0x0020af90       0x10 build/kernel/task.o
+                0x0020a9a0       0x10 build/kernel/task.o
  .bss.ready_primap
-                0x0020afa0        0x2 build/kernel/task.o
- *fill*         0x0020afa2        0x2 00
+                0x0020a9b0        0x2 build/kernel/task.o
+ *fill*         0x0020a9b2        0x2 00
  .bss.ready_queue_last
-                0x0020afa4       0x10 build/kernel/task.o
+                0x0020a9b4       0x10 build/kernel/task.o
  .bss._stack_MotorTask
-                0x0020afb4      0x200 build/./kernel_cfg.o
+                0x0020a9c4      0x200 build/./kernel_cfg.o
  .bss._stack_DisplayTask
-                0x0020b1b4      0x200 build/./kernel_cfg.o
+                0x0020abc4      0x200 build/./kernel_cfg.o
  .bss._stack_ConfigTask
-                0x0020b3b4      0x200 build/./kernel_cfg.o
+                0x0020adc4      0x200 build/./kernel_cfg.o
  .bss._stack_SimulTask
-                0x0020b5b4      0x200 build/./kernel_cfg.o
+                0x0020afc4      0x200 build/./kernel_cfg.o
  .bss.receiveBuf
-                0x0020b7b4       0x80 build/ecrobot_bluetooth.o
- .bss.sendBuf   0x0020b834      0x100 build/ecrobot_bluetooth.o
- .bss.handle    0x0020b934        0x1 build/ecrobot_bluetooth.o
- *fill*         0x0020b935        0x3 00
+                0x0020b1c4       0x80 build/ecrobot_bluetooth.o
+ .bss.sendBuf   0x0020b244      0x100 build/ecrobot_bluetooth.o
+ .bss.handle    0x0020b344        0x1 build/ecrobot_bluetooth.o
+ *fill*         0x0020b345        0x3 00
  .bss.last_act_time.2836
-                0x0020b938        0x4 build/ecrobot_base.o
+                0x0020b348        0x4 build/ecrobot_base.o
  .bss.status_bar_position
-                0x0020b93c        0x4 build/ecrobot_base.o
- .bss.lcd.2758  0x0020b940      0x320 build/ecrobot_base.o
+                0x0020b34c        0x4 build/ecrobot_base.o
+ .bss.lcd.2758  0x0020b350      0x320 build/ecrobot_base.o
  .bss.status_bar
-                0x0020bc60       0x10 build/ecrobot_base.o
- .bss.OS_flag   0x0020bc70        0x4 build/ecrobot_base.o
- .bss.snr_vehicle_angular_speed_last
-                0x0020bc74        0x4 build/BRO_spam_client.o
-                0x0020bc74                snr_vehicle_angular_speed_last
- .bss.snr_vehicle_angular_speed_int
-                0x0020bc78        0x4 build/BRO_spam_client.o
-                0x0020bc78                snr_vehicle_angular_speed_int
- .bss.snr_expmean
-                0x0020bc7c        0x4 build/BRO_spam_client.o
-                0x0020bc7c                snr_expmean
- .bss.u1        0x0020bc80        0x4 build/BRO_spam_client.o
-                0x0020bc80                u1
- .bss.snr_vehicle_speed
-                0x0020bc84        0x4 build/BRO_spam_client.o
-                0x0020bc84                snr_vehicle_speed
- .bss.sonar_ms_count
-                0x0020bc88        0x4 build/BRO_spam_client.o
-                0x0020bc88                sonar_ms_count
- .bss.snr_dist_derivative
-                0x0020bc8c        0x4 build/BRO_spam_client.o
-                0x0020bc8c                snr_dist_derivative
- .bss.u2        0x0020bc90        0x4 build/BRO_spam_client.o
-                0x0020bc90                u2
- .bss.snr_last_expmean
-                0x0020bc94        0x4 build/BRO_spam_client.o
-                0x0020bc94                snr_last_expmean
- .bss.u1_int_last
-                0x0020bc98        0x4 build/BRO_spam_client.o
-                0x0020bc98                u1_int_last
- .bss.u1_int    0x0020bc9c        0x4 build/BRO_spam_client.o
-                0x0020bc9c                u1_int
- .bss.u1_last   0x0020bca0        0x4 build/BRO_spam_client.o
-                0x0020bca0                u1_last
- .bss.snr_vehicle_angular_speed
-                0x0020bca4        0x4 build/BRO_spam_client.o
-                0x0020bca4                snr_vehicle_angular_speed
- .bss.snr_atan  0x0020bca8        0x4 build/BRO_spam_client.o
-                0x0020bca8                snr_atan
- .bss.snr_vehicle_angular_speed_int_last
-                0x0020bcac        0x4 build/BRO_spam_client.o
-                0x0020bcac                snr_vehicle_angular_speed_int_last
+                0x0020b670       0x10 build/ecrobot_base.o
+ .bss.OS_flag   0x0020b680        0x4 build/ecrobot_base.o
+ .bss.etime100  0x0020b684        0x4 build/BRO_spam_client.o
+                0x0020b684                etime100
+ .bss.u2_last   0x0020b688        0x4 build/BRO_spam_client.o
+                0x0020b688                u2_last
+ .bss.dist_err_last
+                0x0020b68c        0x4 build/BRO_spam_client.o
+                0x0020b68c                dist_err_last
+ .bss.u2        0x0020b690        0x4 build/BRO_spam_client.o
+                0x0020b690                u2
+ .bss.dist_err  0x0020b694        0x4 build/BRO_spam_client.o
+                0x0020b694                dist_err
+ .bss.sonar     0x0020b698        0x4 build/BRO_spam_client.o
+                0x0020b698                sonar
  .bss.buttons_i
-                0x0020bcb0        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
+                0x0020b69c        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
  .bss.buttons_states
-                0x0020bcb4       0x14 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
+                0x0020b6a0       0x14 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
  .bss.ecrobot_inputs
-                0x0020bcc8        0x8 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
+                0x0020b6b4        0x8 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
  .bss.systick_ms
-                0x0020bcd0        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(systick.oram)
+                0x0020b6bc        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(systick.oram)
  .bss.delayedEnable
-                0x0020bcd4        0x1 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(udp.oram)
- *fill*         0x0020bcd5        0x3 00
- .bss.outCnt    0x0020bcd8        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(udp.oram)
- .bss.outPtr    0x0020bcdc        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(udp.oram)
+                0x0020b6c0        0x1 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(udp.oram)
+ *fill*         0x0020b6c1        0x3 00
+ .bss.outCnt    0x0020b6c4        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(udp.oram)
+ .bss.outPtr    0x0020b6c8        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(udp.oram)
  .bss.newAddress
-                0x0020bce0        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(udp.oram)
+                0x0020b6cc        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(udp.oram)
  .bss.currentRxBank
-                0x0020bce4        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(udp.oram)
+                0x0020b6d0        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(udp.oram)
  .bss.currentFeatures
-                0x0020bce8        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(udp.oram)
+                0x0020b6d4        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(udp.oram)
  .bss.currentConfig
-                0x0020bcec        0x1 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(udp.oram)
- *fill*         0x0020bced        0x3 00
- .bss.twi_mask  0x0020bcf0        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(twi.oram)
- .bss.twi_ptr   0x0020bcf4        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(twi.oram)
+                0x0020b6d8        0x1 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(udp.oram)
+ *fill*         0x0020b6d9        0x3 00
+ .bss.twi_mask  0x0020b6dc        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(twi.oram)
+ .bss.twi_ptr   0x0020b6e0        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(twi.oram)
  .bss.twi_pending
-                0x0020bcf8        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(twi.oram)
+                0x0020b6e4        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(twi.oram)
  .bss.twi_state
-                0x0020bcfc        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(twi.oram)
- .bss.page      0x0020bd00        0x1 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_spi.oram)
-                0x0020bd00                page
- .bss.dirty     0x0020bd01        0x1 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_spi.oram)
-                0x0020bd01                dirty
- *fill*         0x0020bd02        0x2 00
- .bss.display   0x0020bd04        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_spi.oram)
-                0x0020bd04                display
+                0x0020b6e8        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(twi.oram)
+ .bss.page      0x0020b6ec        0x1 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_spi.oram)
+                0x0020b6ec                page
+ .bss.dirty     0x0020b6ed        0x1 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_spi.oram)
+                0x0020b6ed                dirty
+ *fill*         0x0020b6ee        0x2 00
+ .bss.display   0x0020b6f0        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_spi.oram)
+                0x0020b6f0                display
  .bss.interrupts_this_period
-                0x0020bd08        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_motors.oram)
+                0x0020b6f4        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_motors.oram)
  .bss.nxt_motor_initialised
-                0x0020bd0c        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_motors.oram)
- .bss.motor     0x0020bd10       0x30 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_motors.oram)
+                0x0020b6f8        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_motors.oram)
+ .bss.motor     0x0020b6fc       0x30 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_motors.oram)
  .bss.display_tick
-                0x0020bd40        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(display.oram)
-                0x0020bd40                display_tick
+                0x0020b72c        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(display.oram)
+                0x0020b72c                display_tick
  .bss.display_array
-                0x0020bd44      0x388 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(display.oram)
+                0x0020b730      0x388 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(display.oram)
  .bss.i2c_int_count
-                0x0020c0cc        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(i2c.oram)
- .bss.i2c_port  0x0020c0d0      0x170 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(i2c.oram)
+                0x0020bab8        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(i2c.oram)
+ .bss.i2c_port  0x0020babc      0x170 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(i2c.oram)
  .bss.sound_mode
-                0x0020c240        0x1 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(sound.oram)
-                0x0020c240                sound_mode
- *fill*         0x0020c241        0x3 00
+                0x0020bc2c        0x1 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(sound.oram)
+                0x0020bc2c                sound_mode
+ *fill*         0x0020bc2d        0x3 00
  .bss.in_buf_idx
-                0x0020c244        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(bt.oram)
- .bss.buf_ptr   0x0020c248        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(bt.oram)
- .bss.out_buf   0x0020c24c      0x200 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(bt.oram)
+                0x0020bc30        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(bt.oram)
+ .bss.buf_ptr   0x0020bc34        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(bt.oram)
+ .bss.out_buf   0x0020bc38      0x200 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(bt.oram)
  .bss.out_buf_ptr
-                0x0020c44c        0x1 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(bt.oram)
+                0x0020be38        0x1 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(bt.oram)
  .bss.in_buf_in_ptr
-                0x0020c44d        0x1 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(bt.oram)
- .bss.in_buf    0x0020c44e      0x100 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(bt.oram)
- *fill*         0x0020c54e        0x2 00
+                0x0020be39        0x1 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(bt.oram)
+ .bss.in_buf    0x0020be3a      0x100 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(bt.oram)
+ *fill*         0x0020bf3a        0x2 00
  .bss.link_state
-                0x0020c550        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_avr.oram)
+                0x0020bf3c        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_avr.oram)
  .bss.update_count
-                0x0020c554        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_avr.oram)
+                0x0020bf40        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_avr.oram)
  .bss.nxt_avr_stats
-                0x0020c558       0x14 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_avr.oram)
+                0x0020bf44       0x14 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_avr.oram)
  .bss.debounce_cnt
-                0x0020c56c        0x2 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_avr.oram)
+                0x0020bf58        0x2 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_avr.oram)
  .bss.debounce_state
-                0x0020c56e        0x2 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_avr.oram)
+                0x0020bf5a        0x2 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_avr.oram)
  .bss.button_state
-                0x0020c570        0x2 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_avr.oram)
+                0x0020bf5c        0x2 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_avr.oram)
  .bss.prev_buttons
-                0x0020c572        0x2 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_avr.oram)
- .bss.from_buf  0x0020c574        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_avr.oram)
+                0x0020bf5e        0x2 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_avr.oram)
+ .bss.from_buf  0x0020bf60        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_avr.oram)
  .bss.io_from_avr
-                0x0020c578        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_avr.oram)
+                0x0020bf64        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_avr.oram)
  .bss.data_from_avr
-                0x0020c57c       0x1a ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_avr.oram)
+                0x0020bf68       0x1a ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_avr.oram)
  .bss.data_to_avr
-                0x0020c596        0x9 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_avr.oram)
+                0x0020bf82        0x9 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_avr.oram)
  .bss.io_to_avr
-                0x0020c59f        0x8 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_avr.oram)
- *fill*         0x0020c5a7        0x1 00
- .bss.display   0x0020c5a8        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_lcd.oram)
-                0x0020c5b0                . = ALIGN (0x10)
- *fill*         0x0020c5ac        0x4 00
-                0x0020c5b0                __bss_end__ = .
- COMMON         0x0020c5b0        0x2 build/kernel/interrupt.o
-                0x0020c5b0                runisr
-                0x0020c5b1                sus_all_cnt
- *fill*         0x0020c5b2        0x2 00
- COMMON         0x0020c5b4       0x10 build/kernel/osctl.o
-                0x0020c5b4                callevel
-                0x0020c5b5                _errorhook_svcid
-                0x0020c5b6                appmode
-                0x0020c5b8                _errorhook_par1
-                0x0020c5bc                _errorhook_par3
-                0x0020c5c0                _errorhook_par2
- COMMON         0x0020c5c4        0x3 build/kernel/task.o
-                0x0020c5c4                runtsk
-                0x0020c5c5                schedtsk
-                0x0020c5c6                nextpri
- *fill*         0x0020c5c7        0x1 00
- COMMON         0x0020c5c8       0x70 build/./kernel_cfg.o
-                0x0020c5c8                tcb_waievt
-                0x0020c5cc                rescb_prevpri
-                0x0020c5d0                almcb_prev
-                0x0020c5d4                tcb_lastres
-                0x0020c5d8                almcb_almval
-                0x0020c5e4                tcxb_pc
-                0x0020c5f4                tcb_next
-                0x0020c5f8                tcb_curpri
-                0x0020c5fc                tcb_tstat
-                0x0020c600                isrcb_lastres
-                0x0020c604                cntcb_almque
-                0x0020c608                rescb_prevres
-                0x0020c60c                tcb_actcnt
-                0x0020c610                tcb_curevt
-                0x0020c614                almcb_cycle
-                0x0020c620                tcxb_sp
-                0x0020c630                almcb_next
-                0x0020c634                cntcb_curval
- COMMON         0x0020c638       0xe4 build/BRO_spam_client.o
-                0x0020c638                mcd1
-                0x0020c658                sim_config
-                0x0020c670                mcd2
-                0x0020c690                sim_status
-                0x0020c694                data_idx
-                0x0020c698                init_time
-                0x0020c69c                data_msg
- COMMON         0x0020c71c       0x44 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(uart.oram)
-                0x0020c71c                uart
- COMMON         0x0020c760        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(data_abort.oram)
-                0x0020c760                data_abort_pc
- COMMON         0x0020c764        0x8 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(display.oram)
-                0x0020c764                display_x
-                0x0020c768                display_y
- COMMON         0x0020c76c      0x31c ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(sound.oram)
-                0x0020c76c                sample
-                0x0020af90                __bss_start__ = ADDR (.bss)
-                0x0020ca88                __bss_end__ = (ADDR (.bss) + SIZEOF (.bss))
-                0x0020ca88                PROVIDE (end, .)
+                0x0020bf8b        0x8 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_avr.oram)
+ *fill*         0x0020bf93        0x1 00
+ .bss.display   0x0020bf94        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_lcd.oram)
+                0x0020bfa0                . = ALIGN (0x10)
+ *fill*         0x0020bf98        0x8 00
+                0x0020bfa0                __bss_end__ = .
+ COMMON         0x0020bfa0        0x2 build/kernel/interrupt.o
+                0x0020bfa0                runisr
+                0x0020bfa1                sus_all_cnt
+ *fill*         0x0020bfa2        0x2 00
+ COMMON         0x0020bfa4       0x10 build/kernel/osctl.o
+                0x0020bfa4                callevel
+                0x0020bfa5                _errorhook_svcid
+                0x0020bfa6                appmode
+                0x0020bfa8                _errorhook_par1
+                0x0020bfac                _errorhook_par3
+                0x0020bfb0                _errorhook_par2
+ COMMON         0x0020bfb4        0x3 build/kernel/task.o
+                0x0020bfb4                runtsk
+                0x0020bfb5                schedtsk
+                0x0020bfb6                nextpri
+ *fill*         0x0020bfb7        0x1 00
+ COMMON         0x0020bfb8       0x70 build/./kernel_cfg.o
+                0x0020bfb8                tcb_waievt
+                0x0020bfbc                rescb_prevpri
+                0x0020bfc0                almcb_prev
+                0x0020bfc4                tcb_lastres
+                0x0020bfc8                almcb_almval
+                0x0020bfd4                tcxb_pc
+                0x0020bfe4                tcb_next
+                0x0020bfe8                tcb_curpri
+                0x0020bfec                tcb_tstat
+                0x0020bff0                isrcb_lastres
+                0x0020bff4                cntcb_almque
+                0x0020bff8                rescb_prevres
+                0x0020bffc                tcb_actcnt
+                0x0020c000                tcb_curevt
+                0x0020c004                almcb_cycle
+                0x0020c010                tcxb_sp
+                0x0020c020                almcb_next
+                0x0020c024                cntcb_curval
+ COMMON         0x0020c028       0xe8 build/BRO_spam_client.o
+                0x0020c028                mcd1
+                0x0020c048                sim_config
+                0x0020c060                mcd2
+                0x0020c080                last_elapsed_time
+                0x0020c084                sim_status
+                0x0020c088                data_idx
+                0x0020c08c                init_time
+                0x0020c090                data_msg
+ COMMON         0x0020c110       0x44 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(uart.oram)
+                0x0020c110                uart
+ COMMON         0x0020c154        0x4 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(data_abort.oram)
+                0x0020c154                data_abort_pc
+ COMMON         0x0020c158        0x8 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(display.oram)
+                0x0020c158                display_x
+                0x0020c15c                display_y
+ COMMON         0x0020c160      0x31c ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(sound.oram)
+                0x0020c160                sample
+                0x0020a9a0                __bss_start__ = ADDR (.bss)
+                0x0020c47c                __bss_end__ = (ADDR (.bss) + SIZEOF (.bss))
+                0x0020c47c                PROVIDE (end, .)
 
-.heap_area      0x0020ca88     0x30f0
+.heap_area      0x0020c47c     0x36fc
                 0x0020fb78                . = (. + (0x20fb78 - end))
- *fill*         0x0020ca88     0x30f0 00
+ *fill*         0x0020c47c     0x36fc 00
 
 .stack          0x0020fb78      0x488
                 0x0020fbf8                . = (. + 0x80)
@@ -2166,8 +2124,6 @@ OUTPUT(BRO_client_ram.elf elf32-littlearm)
  .comment       0x00000179       0x12 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(flash_loader.oram)
  .comment       0x0000018b       0x12 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_usb.o)
  .comment       0x0000019d       0x12 ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(flashprog.oram)
- .comment       0x00000000       0x12 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_atan.o)
- .comment       0x00000000       0x12 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_fabs.o)
  .comment       0x00000000       0x12 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_sin.o)
  .comment       0x00000000       0x12 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_round.o)
  .comment       0x00000000       0x12 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-ef_rem_pio2.o)
@@ -2242,375 +2198,349 @@ OUTPUT(BRO_client_ram.elf elf32-littlearm)
  .ARM.attributes
                 0x00000190       0x10 build/config/at91sam7s-gnu/irq.oram
  .ARM.attributes
-                0x000001a0       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_atan.o)
+                0x000001a0       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_sin.o)
  .ARM.attributes
-                0x000001b0       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_fabs.o)
+                0x000001b0       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_round.o)
  .ARM.attributes
-                0x000001c0       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_sin.o)
+                0x000001c0       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-ef_rem_pio2.o)
  .ARM.attributes
-                0x000001d0       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_round.o)
+                0x000001d0       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_cos.o)
  .ARM.attributes
-                0x000001e0       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-ef_rem_pio2.o)
+                0x000001e0       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_rem_pio2.o)
  .ARM.attributes
-                0x000001f0       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_cos.o)
+                0x000001f0       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_sin.o)
  .ARM.attributes
-                0x00000200       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_rem_pio2.o)
+                0x00000200       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_fabs.o)
  .ARM.attributes
-                0x00000210       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_sin.o)
+                0x00000210       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_floor.o)
  .ARM.attributes
-                0x00000220       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_fabs.o)
+                0x00000220       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_scalbn.o)
  .ARM.attributes
-                0x00000230       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_floor.o)
+                0x00000230       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_copysign.o)
  .ARM.attributes
-                0x00000240       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_scalbn.o)
+                0x00000240       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_udivsi3.o)
  .ARM.attributes
-                0x00000250       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_copysign.o)
+                0x00000250       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_divsi3.o)
  .ARM.attributes
-                0x00000260       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_udivsi3.o)
+                0x00000260       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_umodsi3.o)
  .ARM.attributes
-                0x00000270       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_divsi3.o)
+                0x00000270       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_modsi3.o)
  .ARM.attributes
-                0x00000280       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_umodsi3.o)
+                0x00000280       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_dvmd_tls.o)
  .ARM.attributes
-                0x00000290       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_modsi3.o)
+                0x00000290       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_addsubdf3.o)
  .ARM.attributes
-                0x000002a0       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_dvmd_tls.o)
+                0x000002a0       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_muldivdf3.o)
  .ARM.attributes
-                0x000002b0       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_addsubdf3.o)
+                0x000002b0       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_cmpdf2.o)
  .ARM.attributes
-                0x000002c0       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_muldivdf3.o)
+                0x000002c0       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_fixdfsi.o)
  .ARM.attributes
-                0x000002d0       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_cmpdf2.o)
+                0x000002d0       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_truncdfsf2.o)
  .ARM.attributes
-                0x000002e0       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_fixdfsi.o)
+                0x000002e0       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_addsubsf3.o)
  .ARM.attributes
-                0x000002f0       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_truncdfsf2.o)
+                0x000002f0       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_muldivsf3.o)
  .ARM.attributes
-                0x00000300       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_addsubsf3.o)
+                0x00000300       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_cmpsf2.o)
  .ARM.attributes
-                0x00000310       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_muldivsf3.o)
+                0x00000310       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_fixsfsi.o)
  .ARM.attributes
-                0x00000320       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_cmpsf2.o)
+                0x00000320       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_muldi3.o)
  .ARM.attributes
-                0x00000330       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_fixsfsi.o)
+                0x00000330       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_divdi3.o)
  .ARM.attributes
-                0x00000340       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_muldi3.o)
+                0x00000340       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_clzsi2.o)
  .ARM.attributes
-                0x00000350       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_divdi3.o)
+                0x00000350       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memcpy.o)
  .ARM.attributes
-                0x00000360       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_clzsi2.o)
+                0x00000360       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memset.o)
  .ARM.attributes
-                0x00000370       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memcpy.o)
+                0x00000370       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcmp.o)
  .ARM.attributes
-                0x00000380       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memset.o)
+                0x00000380       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcpy.o)
  .ARM.attributes
-                0x00000390       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcmp.o)
+                0x00000390       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strlen.o)
  .ARM.attributes
-                0x000003a0       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcpy.o)
+                0x000003a0       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strncpy.o)
  .ARM.attributes
-                0x000003b0       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strlen.o)
- .ARM.attributes
-                0x000003c0       0x10 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strncpy.o)
- .ARM.attributes
-                0x000003d0       0x10 build/nxtvm/platform/nxt/vectors.o
+                0x000003b0       0x10 build/nxtvm/platform/nxt/vectors.o
 
-.debug_abbrev   0x00000000     0x108d
- .debug_abbrev  0x00000000      0x11d /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_atan.o)
- .debug_abbrev  0x0000011d       0xd5 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_fabs.o)
- .debug_abbrev  0x000001f2       0xa1 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_sin.o)
- .debug_abbrev  0x00000293       0xf1 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_round.o)
- .debug_abbrev  0x00000384      0x117 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-ef_rem_pio2.o)
- .debug_abbrev  0x0000049b       0xd5 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_cos.o)
- .debug_abbrev  0x00000570      0x109 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_rem_pio2.o)
- .debug_abbrev  0x00000679       0xe4 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_sin.o)
- .debug_abbrev  0x0000075d       0x71 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_fabs.o)
- .debug_abbrev  0x000007ce       0x8b /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_floor.o)
- .debug_abbrev  0x00000859       0xc8 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_scalbn.o)
- .debug_abbrev  0x00000921       0x80 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_copysign.o)
- .debug_abbrev  0x000009a1       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_udivsi3.o)
- .debug_abbrev  0x000009b5       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_divsi3.o)
- .debug_abbrev  0x000009c9       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_umodsi3.o)
- .debug_abbrev  0x000009dd       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_modsi3.o)
- .debug_abbrev  0x000009f1       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_dvmd_tls.o)
- .debug_abbrev  0x00000a05       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_addsubdf3.o)
- .debug_abbrev  0x00000a19       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_muldivdf3.o)
- .debug_abbrev  0x00000a2d       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_cmpdf2.o)
- .debug_abbrev  0x00000a41       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_fixdfsi.o)
- .debug_abbrev  0x00000a55       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_truncdfsf2.o)
- .debug_abbrev  0x00000a69       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_addsubsf3.o)
- .debug_abbrev  0x00000a7d       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_muldivsf3.o)
- .debug_abbrev  0x00000a91       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_cmpsf2.o)
- .debug_abbrev  0x00000aa5       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_fixsfsi.o)
- .debug_abbrev  0x00000ab9       0xf5 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_muldi3.o)
- .debug_abbrev  0x00000bae      0x169 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_divdi3.o)
- .debug_abbrev  0x00000d17       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_clzsi2.o)
- .debug_abbrev  0x00000d2b       0xa0 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memcpy.o)
- .debug_abbrev  0x00000dcb       0xa1 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memset.o)
- .debug_abbrev  0x00000e6c       0x76 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcmp.o)
- .debug_abbrev  0x00000ee2       0x76 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcpy.o)
- .debug_abbrev  0x00000f58       0x92 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strlen.o)
- .debug_abbrev  0x00000fea       0xa3 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strncpy.o)
+.debug_abbrev   0x00000000      0xe9b
+ .debug_abbrev  0x00000000       0xa1 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_sin.o)
+ .debug_abbrev  0x000000a1       0xf1 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_round.o)
+ .debug_abbrev  0x00000192      0x117 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-ef_rem_pio2.o)
+ .debug_abbrev  0x000002a9       0xd5 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_cos.o)
+ .debug_abbrev  0x0000037e      0x109 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_rem_pio2.o)
+ .debug_abbrev  0x00000487       0xe4 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_sin.o)
+ .debug_abbrev  0x0000056b       0x71 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_fabs.o)
+ .debug_abbrev  0x000005dc       0x8b /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_floor.o)
+ .debug_abbrev  0x00000667       0xc8 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_scalbn.o)
+ .debug_abbrev  0x0000072f       0x80 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_copysign.o)
+ .debug_abbrev  0x000007af       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_udivsi3.o)
+ .debug_abbrev  0x000007c3       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_divsi3.o)
+ .debug_abbrev  0x000007d7       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_umodsi3.o)
+ .debug_abbrev  0x000007eb       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_modsi3.o)
+ .debug_abbrev  0x000007ff       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_dvmd_tls.o)
+ .debug_abbrev  0x00000813       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_addsubdf3.o)
+ .debug_abbrev  0x00000827       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_muldivdf3.o)
+ .debug_abbrev  0x0000083b       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_cmpdf2.o)
+ .debug_abbrev  0x0000084f       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_fixdfsi.o)
+ .debug_abbrev  0x00000863       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_truncdfsf2.o)
+ .debug_abbrev  0x00000877       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_addsubsf3.o)
+ .debug_abbrev  0x0000088b       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_muldivsf3.o)
+ .debug_abbrev  0x0000089f       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_cmpsf2.o)
+ .debug_abbrev  0x000008b3       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_fixsfsi.o)
+ .debug_abbrev  0x000008c7       0xf5 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_muldi3.o)
+ .debug_abbrev  0x000009bc      0x169 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_divdi3.o)
+ .debug_abbrev  0x00000b25       0x14 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_clzsi2.o)
+ .debug_abbrev  0x00000b39       0xa0 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memcpy.o)
+ .debug_abbrev  0x00000bd9       0xa1 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memset.o)
+ .debug_abbrev  0x00000c7a       0x76 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcmp.o)
+ .debug_abbrev  0x00000cf0       0x76 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcpy.o)
+ .debug_abbrev  0x00000d66       0x92 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strlen.o)
+ .debug_abbrev  0x00000df8       0xa3 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strncpy.o)
 
-.debug_info     0x00000000     0x2c3a
- .debug_info    0x00000000      0x288 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_atan.o)
- .debug_info    0x00000288      0x152 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_fabs.o)
- .debug_info    0x000003da       0xf8 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_sin.o)
- .debug_info    0x000004d2      0x1c5 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_round.o)
- .debug_info    0x00000697      0x2d6 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-ef_rem_pio2.o)
- .debug_info    0x0000096d      0x1d0 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_cos.o)
- .debug_info    0x00000b3d      0x2c6 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_rem_pio2.o)
- .debug_info    0x00000e03      0x1be /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_sin.o)
- .debug_info    0x00000fc1       0xc2 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_fabs.o)
- .debug_info    0x00001083      0x115 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_floor.o)
- .debug_info    0x00001198      0x187 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_scalbn.o)
- .debug_info    0x0000131f       0xd7 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_copysign.o)
- .debug_info    0x000013f6       0xae /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_udivsi3.o)
- .debug_info    0x000014a4       0xae /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_divsi3.o)
- .debug_info    0x00001552       0xae /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_umodsi3.o)
- .debug_info    0x00001600       0xae /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_modsi3.o)
- .debug_info    0x000016ae       0xae /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_dvmd_tls.o)
- .debug_info    0x0000175c       0xad /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_addsubdf3.o)
- .debug_info    0x00001809       0xad /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_muldivdf3.o)
- .debug_info    0x000018b6       0xad /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_cmpdf2.o)
- .debug_info    0x00001963       0xad /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_fixdfsi.o)
- .debug_info    0x00001a10       0xad /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_truncdfsf2.o)
- .debug_info    0x00001abd       0xad /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_addsubsf3.o)
- .debug_info    0x00001b6a       0xad /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_muldivsf3.o)
- .debug_info    0x00001c17       0xad /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_cmpsf2.o)
- .debug_info    0x00001cc4       0xad /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_fixsfsi.o)
- .debug_info    0x00001d71      0x20e /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_muldi3.o)
- .debug_info    0x00001f7f      0x669 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_divdi3.o)
- .debug_info    0x000025e8       0xae /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_clzsi2.o)
- .debug_info    0x00002696      0x13e /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memcpy.o)
- .debug_info    0x000027d4      0x111 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memset.o)
- .debug_info    0x000028e5       0xaf /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcmp.o)
- .debug_info    0x00002994       0xb7 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcpy.o)
- .debug_info    0x00002a4b       0xcb /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strlen.o)
- .debug_info    0x00002b16      0x124 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strncpy.o)
+.debug_info     0x00000000     0x2860
+ .debug_info    0x00000000       0xf8 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_sin.o)
+ .debug_info    0x000000f8      0x1c5 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_round.o)
+ .debug_info    0x000002bd      0x2d6 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-ef_rem_pio2.o)
+ .debug_info    0x00000593      0x1d0 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_cos.o)
+ .debug_info    0x00000763      0x2c6 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_rem_pio2.o)
+ .debug_info    0x00000a29      0x1be /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_sin.o)
+ .debug_info    0x00000be7       0xc2 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_fabs.o)
+ .debug_info    0x00000ca9      0x115 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_floor.o)
+ .debug_info    0x00000dbe      0x187 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_scalbn.o)
+ .debug_info    0x00000f45       0xd7 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_copysign.o)
+ .debug_info    0x0000101c       0xae /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_udivsi3.o)
+ .debug_info    0x000010ca       0xae /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_divsi3.o)
+ .debug_info    0x00001178       0xae /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_umodsi3.o)
+ .debug_info    0x00001226       0xae /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_modsi3.o)
+ .debug_info    0x000012d4       0xae /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_dvmd_tls.o)
+ .debug_info    0x00001382       0xad /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_addsubdf3.o)
+ .debug_info    0x0000142f       0xad /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_muldivdf3.o)
+ .debug_info    0x000014dc       0xad /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_cmpdf2.o)
+ .debug_info    0x00001589       0xad /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_fixdfsi.o)
+ .debug_info    0x00001636       0xad /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_truncdfsf2.o)
+ .debug_info    0x000016e3       0xad /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_addsubsf3.o)
+ .debug_info    0x00001790       0xad /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_muldivsf3.o)
+ .debug_info    0x0000183d       0xad /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_cmpsf2.o)
+ .debug_info    0x000018ea       0xad /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_fixsfsi.o)
+ .debug_info    0x00001997      0x20e /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_muldi3.o)
+ .debug_info    0x00001ba5      0x669 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_divdi3.o)
+ .debug_info    0x0000220e       0xae /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_clzsi2.o)
+ .debug_info    0x000022bc      0x13e /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memcpy.o)
+ .debug_info    0x000023fa      0x111 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memset.o)
+ .debug_info    0x0000250b       0xaf /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcmp.o)
+ .debug_info    0x000025ba       0xb7 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcpy.o)
+ .debug_info    0x00002671       0xcb /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strlen.o)
+ .debug_info    0x0000273c      0x124 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strncpy.o)
 
-.debug_line     0x00000000     0x22d8
- .debug_line    0x00000000      0x18f /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_atan.o)
- .debug_line    0x0000018f      0x14f /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_fabs.o)
- .debug_line    0x000002de      0x119 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_sin.o)
- .debug_line    0x000003f7      0x133 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_round.o)
- .debug_line    0x0000052a      0x178 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-ef_rem_pio2.o)
- .debug_line    0x000006a2      0x12a /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_cos.o)
- .debug_line    0x000007cc      0x278 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_rem_pio2.o)
- .debug_line    0x00000a44      0x11f /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_sin.o)
- .debug_line    0x00000b63      0x105 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_fabs.o)
- .debug_line    0x00000c68      0x11e /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_floor.o)
- .debug_line    0x00000d86      0x134 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_scalbn.o)
- .debug_line    0x00000eba      0x109 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_copysign.o)
- .debug_line    0x00000fc3       0x8c /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_udivsi3.o)
- .debug_line    0x0000104f       0x98 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_divsi3.o)
- .debug_line    0x000010e7       0x84 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_umodsi3.o)
- .debug_line    0x0000116b       0x8d /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_modsi3.o)
- .debug_line    0x000011f8       0x76 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_dvmd_tls.o)
- .debug_line    0x0000126e      0x17e /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_addsubdf3.o)
- .debug_line    0x000013ec      0x193 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_muldivdf3.o)
- .debug_line    0x0000157f       0xc0 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_cmpdf2.o)
- .debug_line    0x0000163f       0x8b /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_fixdfsi.o)
- .debug_line    0x000016ca       0x9c /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_truncdfsf2.o)
- .debug_line    0x00001766      0x12c /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_addsubsf3.o)
- .debug_line    0x00001892      0x136 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_muldivsf3.o)
- .debug_line    0x000019c8       0xb4 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_cmpsf2.o)
- .debug_line    0x00001a7c       0x8b /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_fixsfsi.o)
- .debug_line    0x00001b07       0x81 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_muldi3.o)
- .debug_line    0x00001b88       0xe2 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_divdi3.o)
- .debug_line    0x00001c6a       0x83 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_clzsi2.o)
- .debug_line    0x00001ced      0x13b /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memcpy.o)
- .debug_line    0x00001e28      0x136 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memset.o)
- .debug_line    0x00001f5e       0xb7 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcmp.o)
- .debug_line    0x00002015       0xb7 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcpy.o)
- .debug_line    0x000020cc       0xfc /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strlen.o)
- .debug_line    0x000021c8      0x110 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strncpy.o)
+.debug_line     0x00000000     0x1ffa
+ .debug_line    0x00000000      0x119 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_sin.o)
+ .debug_line    0x00000119      0x133 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_round.o)
+ .debug_line    0x0000024c      0x178 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-ef_rem_pio2.o)
+ .debug_line    0x000003c4      0x12a /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_cos.o)
+ .debug_line    0x000004ee      0x278 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_rem_pio2.o)
+ .debug_line    0x00000766      0x11f /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_sin.o)
+ .debug_line    0x00000885      0x105 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_fabs.o)
+ .debug_line    0x0000098a      0x11e /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_floor.o)
+ .debug_line    0x00000aa8      0x134 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_scalbn.o)
+ .debug_line    0x00000bdc      0x109 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_copysign.o)
+ .debug_line    0x00000ce5       0x8c /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_udivsi3.o)
+ .debug_line    0x00000d71       0x98 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_divsi3.o)
+ .debug_line    0x00000e09       0x84 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_umodsi3.o)
+ .debug_line    0x00000e8d       0x8d /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_modsi3.o)
+ .debug_line    0x00000f1a       0x76 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_dvmd_tls.o)
+ .debug_line    0x00000f90      0x17e /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_addsubdf3.o)
+ .debug_line    0x0000110e      0x193 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_muldivdf3.o)
+ .debug_line    0x000012a1       0xc0 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_cmpdf2.o)
+ .debug_line    0x00001361       0x8b /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_fixdfsi.o)
+ .debug_line    0x000013ec       0x9c /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_truncdfsf2.o)
+ .debug_line    0x00001488      0x12c /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_addsubsf3.o)
+ .debug_line    0x000015b4      0x136 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_muldivsf3.o)
+ .debug_line    0x000016ea       0xb4 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_cmpsf2.o)
+ .debug_line    0x0000179e       0x8b /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_fixsfsi.o)
+ .debug_line    0x00001829       0x81 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_muldi3.o)
+ .debug_line    0x000018aa       0xe2 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_divdi3.o)
+ .debug_line    0x0000198c       0x83 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_clzsi2.o)
+ .debug_line    0x00001a0f      0x13b /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memcpy.o)
+ .debug_line    0x00001b4a      0x136 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memset.o)
+ .debug_line    0x00001c80       0xb7 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcmp.o)
+ .debug_line    0x00001d37       0xb7 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcpy.o)
+ .debug_line    0x00001dee       0xfc /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strlen.o)
+ .debug_line    0x00001eea      0x110 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strncpy.o)
 
-.debug_loc      0x00000000     0x2021
- .debug_loc     0x00000000      0x232 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_atan.o)
- .debug_loc     0x00000232       0x37 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_fabs.o)
- .debug_loc     0x00000269       0x9e /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_sin.o)
- .debug_loc     0x00000307      0x203 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_round.o)
- .debug_loc     0x0000050a      0x294 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-ef_rem_pio2.o)
- .debug_loc     0x0000079e      0x12c /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_cos.o)
- .debug_loc     0x000008ca      0x723 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_rem_pio2.o)
- .debug_loc     0x00000fed       0xc4 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_sin.o)
- .debug_loc     0x000010b1       0x13 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_fabs.o)
- .debug_loc     0x000010c4      0x118 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_floor.o)
- .debug_loc     0x000011dc      0x15a /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_scalbn.o)
- .debug_loc     0x00001336       0x13 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_copysign.o)
- .debug_loc     0x00001349      0x156 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_muldi3.o)
- .debug_loc     0x0000149f      0x800 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_divdi3.o)
- .debug_loc     0x00001c9f      0x13b /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memcpy.o)
- .debug_loc     0x00001dda       0xfc /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memset.o)
- .debug_loc     0x00001ed6       0x13 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcmp.o)
- .debug_loc     0x00001ee9       0x13 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcpy.o)
- .debug_loc     0x00001efc       0x26 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strlen.o)
- .debug_loc     0x00001f22       0xff /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strncpy.o)
+.debug_loc      0x00000000     0x1db8
+ .debug_loc     0x00000000       0x9e /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_sin.o)
+ .debug_loc     0x0000009e      0x203 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_round.o)
+ .debug_loc     0x000002a1      0x294 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-ef_rem_pio2.o)
+ .debug_loc     0x00000535      0x12c /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_cos.o)
+ .debug_loc     0x00000661      0x723 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_rem_pio2.o)
+ .debug_loc     0x00000d84       0xc4 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_sin.o)
+ .debug_loc     0x00000e48       0x13 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_fabs.o)
+ .debug_loc     0x00000e5b      0x118 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_floor.o)
+ .debug_loc     0x00000f73      0x15a /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_scalbn.o)
+ .debug_loc     0x000010cd       0x13 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_copysign.o)
+ .debug_loc     0x000010e0      0x156 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_muldi3.o)
+ .debug_loc     0x00001236      0x800 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_divdi3.o)
+ .debug_loc     0x00001a36      0x13b /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memcpy.o)
+ .debug_loc     0x00001b71       0xfc /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memset.o)
+ .debug_loc     0x00001c6d       0x13 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcmp.o)
+ .debug_loc     0x00001c80       0x13 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcpy.o)
+ .debug_loc     0x00001c93       0x26 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strlen.o)
+ .debug_loc     0x00001cb9       0xff /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strncpy.o)
 
 .debug_pubnames
-                0x00000000      0x26c
+                0x00000000      0x236
  .debug_pubnames
-                0x00000000       0x1b /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_atan.o)
+                0x00000000       0x1b /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_sin.o)
  .debug_pubnames
-                0x0000001b       0x1b /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_fabs.o)
+                0x0000001b       0x1c /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_round.o)
  .debug_pubnames
-                0x00000036       0x1b /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_sin.o)
+                0x00000037       0x2a /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-ef_rem_pio2.o)
  .debug_pubnames
-                0x00000051       0x1c /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_round.o)
+                0x00000061       0x24 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_cos.o)
  .debug_pubnames
-                0x0000006d       0x2a /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-ef_rem_pio2.o)
+                0x00000085       0x29 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_rem_pio2.o)
  .debug_pubnames
-                0x00000097       0x24 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_cos.o)
+                0x000000ae       0x24 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_sin.o)
  .debug_pubnames
-                0x000000bb       0x29 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_rem_pio2.o)
+                0x000000d2       0x1c /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_fabs.o)
  .debug_pubnames
-                0x000000e4       0x24 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_sin.o)
+                0x000000ee       0x1d /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_floor.o)
  .debug_pubnames
-                0x00000108       0x1c /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_fabs.o)
+                0x0000010b       0x1e /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_scalbn.o)
  .debug_pubnames
-                0x00000124       0x1d /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_floor.o)
+                0x00000129       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_copysign.o)
  .debug_pubnames
-                0x00000141       0x1e /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_scalbn.o)
+                0x00000149       0x1f /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_muldi3.o)
  .debug_pubnames
-                0x0000015f       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_copysign.o)
+                0x00000168       0x1f /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_divdi3.o)
  .debug_pubnames
-                0x0000017f       0x1f /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_muldi3.o)
+                0x00000187       0x1d /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memcpy.o)
  .debug_pubnames
-                0x0000019e       0x1f /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_divdi3.o)
+                0x000001a4       0x1d /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memset.o)
  .debug_pubnames
-                0x000001bd       0x1d /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memcpy.o)
+                0x000001c1       0x1d /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcmp.o)
  .debug_pubnames
-                0x000001da       0x1d /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memset.o)
+                0x000001de       0x1d /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcpy.o)
  .debug_pubnames
-                0x000001f7       0x1d /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcmp.o)
+                0x000001fb       0x1d /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strlen.o)
  .debug_pubnames
-                0x00000214       0x1d /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcpy.o)
- .debug_pubnames
-                0x00000231       0x1d /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strlen.o)
- .debug_pubnames
-                0x0000024e       0x1e /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strncpy.o)
+                0x00000218       0x1e /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strncpy.o)
 
-.debug_aranges  0x00000000      0x460
+.debug_aranges  0x00000000      0x420
  .debug_aranges
-                0x00000000       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_atan.o)
+                0x00000000       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_sin.o)
  .debug_aranges
-                0x00000020       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_fabs.o)
+                0x00000020       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_round.o)
  .debug_aranges
-                0x00000040       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_sin.o)
+                0x00000040       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-ef_rem_pio2.o)
  .debug_aranges
-                0x00000060       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_round.o)
+                0x00000060       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_cos.o)
  .debug_aranges
-                0x00000080       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-ef_rem_pio2.o)
+                0x00000080       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_rem_pio2.o)
  .debug_aranges
-                0x000000a0       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_cos.o)
+                0x000000a0       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_sin.o)
  .debug_aranges
-                0x000000c0       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_rem_pio2.o)
+                0x000000c0       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_fabs.o)
  .debug_aranges
-                0x000000e0       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_sin.o)
+                0x000000e0       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_floor.o)
  .debug_aranges
-                0x00000100       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_fabs.o)
+                0x00000100       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_scalbn.o)
  .debug_aranges
-                0x00000120       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_floor.o)
+                0x00000120       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_copysign.o)
  .debug_aranges
-                0x00000140       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_scalbn.o)
+                0x00000140       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_udivsi3.o)
  .debug_aranges
-                0x00000160       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_copysign.o)
+                0x00000160       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_divsi3.o)
  .debug_aranges
-                0x00000180       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_udivsi3.o)
+                0x00000180       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_umodsi3.o)
  .debug_aranges
-                0x000001a0       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_divsi3.o)
+                0x000001a0       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_modsi3.o)
  .debug_aranges
-                0x000001c0       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_umodsi3.o)
+                0x000001c0       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_dvmd_tls.o)
  .debug_aranges
-                0x000001e0       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_modsi3.o)
+                0x000001e0       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_addsubdf3.o)
  .debug_aranges
-                0x00000200       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_dvmd_tls.o)
+                0x00000200       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_muldivdf3.o)
  .debug_aranges
-                0x00000220       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_addsubdf3.o)
+                0x00000220       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_cmpdf2.o)
  .debug_aranges
-                0x00000240       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_muldivdf3.o)
+                0x00000240       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_fixdfsi.o)
  .debug_aranges
-                0x00000260       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_cmpdf2.o)
+                0x00000260       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_truncdfsf2.o)
  .debug_aranges
-                0x00000280       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_fixdfsi.o)
+                0x00000280       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_addsubsf3.o)
  .debug_aranges
-                0x000002a0       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_truncdfsf2.o)
+                0x000002a0       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_muldivsf3.o)
  .debug_aranges
-                0x000002c0       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_addsubsf3.o)
+                0x000002c0       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_cmpsf2.o)
  .debug_aranges
-                0x000002e0       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_muldivsf3.o)
+                0x000002e0       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_fixsfsi.o)
  .debug_aranges
-                0x00000300       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_cmpsf2.o)
+                0x00000300       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_muldi3.o)
  .debug_aranges
-                0x00000320       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_fixsfsi.o)
+                0x00000320       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_divdi3.o)
  .debug_aranges
-                0x00000340       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_muldi3.o)
+                0x00000340       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_clzsi2.o)
  .debug_aranges
-                0x00000360       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_divdi3.o)
+                0x00000360       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memcpy.o)
  .debug_aranges
-                0x00000380       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_clzsi2.o)
+                0x00000380       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memset.o)
  .debug_aranges
-                0x000003a0       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memcpy.o)
+                0x000003a0       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcmp.o)
  .debug_aranges
-                0x000003c0       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memset.o)
+                0x000003c0       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcpy.o)
  .debug_aranges
-                0x000003e0       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcmp.o)
+                0x000003e0       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strlen.o)
  .debug_aranges
-                0x00000400       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcpy.o)
- .debug_aranges
-                0x00000420       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strlen.o)
- .debug_aranges
-                0x00000440       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strncpy.o)
+                0x00000400       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strncpy.o)
 
-.debug_ranges   0x00000000      0x190
- .debug_ranges  0x00000000       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_atan.o)
- .debug_ranges  0x00000020       0x18 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_fabs.o)
- .debug_ranges  0x00000038       0x18 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_round.o)
- .debug_ranges  0x00000050       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-ef_rem_pio2.o)
- .debug_ranges  0x00000070       0x40 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_muldi3.o)
- .debug_ranges  0x000000b0       0xe0 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_divdi3.o)
-
-.debug_str      0x00000000      0x82f
- .debug_str     0x00000000       0xfa /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_atan.o)
-                                0x140 (size before relaxing)
- .debug_str     0x000000fa       0x4c /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_fabs.o)
-                                0x12d (size before relaxing)
- .debug_str     0x00000146       0x3d /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_sin.o)
+.debug_str      0x00000000      0x793
+ .debug_str     0x00000000       0xaf /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_sin.o)
                                  0xfa (size before relaxing)
- .debug_str     0x00000183       0x71 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_round.o)
+ .debug_str     0x000000af       0x9f /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_round.o)
                                 0x157 (size before relaxing)
- .debug_str     0x000001f4       0xcf /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-ef_rem_pio2.o)
+ .debug_str     0x0000014e       0xd4 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-ef_rem_pio2.o)
                                 0x19d (size before relaxing)
- .debug_str     0x000002c3       0x4b /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_cos.o)
+ .debug_str     0x00000222       0x4b /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_cos.o)
                                 0x134 (size before relaxing)
- .debug_str     0x0000030e       0x83 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_rem_pio2.o)
+ .debug_str     0x0000026d       0x83 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_rem_pio2.o)
                                 0x145 (size before relaxing)
- .debug_str     0x00000391       0x4b /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_sin.o)
+ .debug_str     0x000002f0       0x4b /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_sin.o)
                                 0x139 (size before relaxing)
- .debug_str     0x000003dc       0x44 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_fabs.o)
+ .debug_str     0x0000033b       0x44 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_fabs.o)
                                  0xfd (size before relaxing)
- .debug_str     0x00000420       0x46 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_floor.o)
+ .debug_str     0x0000037f       0x4b /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_floor.o)
                                 0x10e (size before relaxing)
- .debug_str     0x00000466       0x5c /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_scalbn.o)
+ .debug_str     0x000003ca       0x5c /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_scalbn.o)
                                 0x14a (size before relaxing)
- .debug_str     0x000004c2       0x4e /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_copysign.o)
+ .debug_str     0x00000426       0x4e /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_copysign.o)
                                 0x107 (size before relaxing)
- .debug_str     0x00000510       0xde /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_muldi3.o)
+ .debug_str     0x00000474       0xde /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_muldi3.o)
                                 0x193 (size before relaxing)
- .debug_str     0x000005ee       0x3c /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_divdi3.o)
+ .debug_str     0x00000552       0x3c /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_divdi3.o)
                                 0x1c6 (size before relaxing)
- .debug_str     0x0000062a       0x74 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memcpy.o)
+ .debug_str     0x0000058e       0x74 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memcpy.o)
                                 0x109 (size before relaxing)
- .debug_str     0x0000069e       0x5a /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memset.o)
+ .debug_str     0x00000602       0x5a /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-memset.o)
                                  0xf6 (size before relaxing)
- .debug_str     0x000006f8       0x4b /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcmp.o)
+ .debug_str     0x0000065c       0x4b /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcmp.o)
                                  0xe0 (size before relaxing)
- .debug_str     0x00000743       0x4b /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcpy.o)
+ .debug_str     0x000006a7       0x4b /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strcpy.o)
                                  0xe0 (size before relaxing)
- .debug_str     0x0000078e       0x53 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strlen.o)
+ .debug_str     0x000006f2       0x53 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strlen.o)
                                  0xef (size before relaxing)
- .debug_str     0x000007e1       0x4e /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strncpy.o)
+ .debug_str     0x00000745       0x4e /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libc.a(lib_a-strncpy.o)
                                 0x10c (size before relaxing)
+
+.debug_ranges   0x00000000      0x158
+ .debug_ranges  0x00000000       0x18 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_round.o)
+ .debug_ranges  0x00000018       0x20 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-ef_rem_pio2.o)
+ .debug_ranges  0x00000038       0x40 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_muldi3.o)
+ .debug_ranges  0x00000078       0xe0 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_divdi3.o)
 
 .debug_frame    0x00000000       0xa0
  .debug_frame   0x00000000       0x28 /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_udivsi3.o)
@@ -2667,7 +2597,7 @@ ReleaseResource                                   build/kernel/resource.o
 ResumeAllInterrupts                               build/kernel/interrupt.o
 ResumeOSInterrupts                                build/kernel/interrupt.o
 SNR_R                                             build/BRO_spam_client.o
-SNR_TIME_PERIOD                                   build/BRO_spam_client.o
+SONAR_SAMPLING                                    build/BRO_spam_client.o
 Schedule                                          build/kernel/task_manage.o
 SetAbsAlarm                                       build/kernel/alarm.o
 SetEvent                                          build/kernel/event.o
@@ -2695,7 +2625,6 @@ SuspendAllInterrupts                              build/kernel/interrupt.o
 SuspendOSInterrupts                               build/kernel/interrupt.o
 SysTimerCnt                                       build/./kernel_cfg.o
                                                   build/BRO_spam_client.o
-TIME_PERIOD                                       build/BRO_spam_client.o
 TaskMainConfigTask                                build/BRO_spam_client.o
                                                   build/./kernel_cfg.o
 TaskMainDisplayTask                               build/BRO_spam_client.o
@@ -2710,7 +2639,6 @@ WaitEvent                                         build/kernel/event.o
                                                   build/BRO_spam_client.o
 __adddf3                                          /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_addsubdf3.o)
                                                   /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_round.o)
-                                                  /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_atan.o)
                                                   build/BRO_spam_client.o
 __addsf3                                          /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_addsubsf3.o)
                                                   /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_scalbn.o)
@@ -2783,8 +2711,6 @@ __div0                                            /home/ubuntu/NXT/gnuarm/lib/gc
                                                   /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_divsi3.o)
                                                   /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_udivsi3.o)
 __divdf3                                          /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_muldivdf3.o)
-                                                  /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_atan.o)
-                                                  build/BRO_spam_client.o
 __divdi3                                          /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_divdi3.o)
                                                   ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(sound.oram)
 __divsf3                                          /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_muldivsf3.o)
@@ -2824,12 +2750,14 @@ __floatundisf                                     /home/ubuntu/NXT/gnuarm/lib/gc
 __floatunsidf                                     /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_addsubdf3.o)
 __floatunsisf                                     /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_addsubsf3.o)
                                                   build/common/simul_config.o
+                                                  build/BRO_spam_client.o
 __gedf2                                           /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_cmpdf2.o)
 __gesf2                                           /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_cmpsf2.o)
                                                   /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_rem_pio2.o)
+                                                  build/BRO_spam_client.o
 __gtdf2                                           /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_cmpdf2.o)
-                                                  /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_atan.o)
                                                   ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(colorsensor.o)
+                                                  build/BRO_spam_client.o
 __gtsf2                                           /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_cmpsf2.o)
                                                   /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_floor.o)
                                                   build/common/simul_config.o
@@ -2852,7 +2780,6 @@ __modsi3                                          /home/ubuntu/NXT/gnuarm/lib/gc
                                                   ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(flash_loader.oram)
                                                   ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(sound.oram)
 __muldf3                                          /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_muldivdf3.o)
-                                                  /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_atan.o)
                                                   ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(colorsensor.o)
                                                   build/BRO_spam_client.o
 __muldi3                                          /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_muldi3.o)
@@ -2873,7 +2800,6 @@ __ramtext_ram_start__                             build/ecrobot_init.o
 __stack_end__                                     build/ecrobot_init.o
 __stack_start__                                   build/ecrobot_init.o
 __subdf3                                          /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_addsubdf3.o)
-                                                  /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_atan.o)
                                                   build/BRO_spam_client.o
 __subsf3                                          /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/thumb/interwork/libgcc.a(_arm_addsubsf3.o)
                                                   /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-kf_sin.o)
@@ -2974,8 +2900,6 @@ alminib_cycle                                     build/./kernel_cfg.o
 appmode                                           build/kernel/task.o
                                                   build/kernel/osctl.o
                                                   build/kernel/alarm.o
-atan                                              /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_atan.o)
-                                                  build/BRO_spam_client.o
 avr_brainwash_string                              ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_avr.oram)
 battery_voltage                                   ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_avr.oram)
                                                   ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
@@ -3153,6 +3077,8 @@ display_update                                    ../../nxtOSEK/ecrobot/../ecrob
                                                   build/ecrobot_base.o
 display_x                                         ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(display.oram)
 display_y                                         ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(display.oram)
+dist_err                                          build/BRO_spam_client.o
+dist_err_last                                     build/BRO_spam_client.o
 ecrobot_adc_data_monitor                          ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
 ecrobot_bmp2lcd                                   ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
                                                   build/ecrobot_base.o
@@ -3274,6 +3200,7 @@ encode_sim_data_msg                               build/common/bt_comm.o
                                                   build/BRO_spam_client.o
 encode_sim_start_msg                              build/common/bt_comm.o
 end                                               build/syscalls.o
+etime100                                          build/BRO_spam_client.o
 exec_NXT_BIOS                                     build/ecrobot_base.o
                                                   ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(ecrobot_interface.o)
 exec_addr                                         build/ecrobot_base.o
@@ -3282,8 +3209,6 @@ execution_mode                                    build/ecrobot_base.o
                                                   build/ecrobot.o
 exit_and_dispatch                                 build/config/at91sam7s-gnu/cpu_support.oram
                                                   build/kernel/task_manage.o
-fabs                                              /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_fabs.o)
-                                                  /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-s_atan.o)
 fabsf                                             /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_fabs.o)
                                                   /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-ef_rem_pio2.o)
 fiq_enable                                        ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(interrupts.oram)
@@ -3358,6 +3283,7 @@ isrcb_lastres                                     build/./kernel_cfg.o
                                                   build/kernel/interrupt.o
 isrinib_intpri                                    build/./kernel_cfg.o
                                                   build/kernel/resource.o
+last_elapsed_time                                 build/BRO_spam_client.o
 left_ct                                           build/BRO_spam_client.o
 logvol                                            ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(sound.oram)
 main                                              build/ecrobot.o
@@ -3551,15 +3477,7 @@ sim_status                                        build/BRO_spam_client.o
 sine                                              ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(sound.oram)
 sinf                                              /home/ubuntu/NXT/gnuarm/lib/gcc/arm-elf/4.4.2/../../../../arm-elf/lib/thumb/interwork/libm.a(lib_a-sf_sin.o)
                                                   build/common/simul_config.o
-snr_atan                                          build/BRO_spam_client.o
-snr_dist_derivative                               build/BRO_spam_client.o
-snr_expmean                                       build/BRO_spam_client.o
-snr_last_expmean                                  build/BRO_spam_client.o
-snr_vehicle_angular_speed                         build/BRO_spam_client.o
-snr_vehicle_angular_speed_int                     build/BRO_spam_client.o
-snr_vehicle_angular_speed_int_last                build/BRO_spam_client.o
-snr_vehicle_angular_speed_last                    build/BRO_spam_client.o
-snr_vehicle_speed                                 build/BRO_spam_client.o
+sonar                                             build/BRO_spam_client.o
 sonar_ms_count                                    build/BRO_spam_client.o
 sonar_read_ms                                     build/BRO_spam_client.o
 sound_disable                                     ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(sound.oram)
@@ -3751,11 +3669,8 @@ twi_start_write                                   ../../nxtOSEK/ecrobot/../ecrob
 twi_status                                        ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(twi.oram)
                                                   ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(flashprog.oram)
                                                   ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(nxt_avr.oram)
-u1                                                build/BRO_spam_client.o
-u1_int                                            build/BRO_spam_client.o
-u1_int_last                                       build/BRO_spam_client.o
-u1_last                                           build/BRO_spam_client.o
 u2                                                build/BRO_spam_client.o
+u2_last                                           build/BRO_spam_client.o
 uart                                              ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(uart.oram)
 uart_CheckBreak                                   ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(uart.oram)
 uart_clear_break                                  ../../nxtOSEK/ecrobot/../ecrobot/libecrobot.a(uart.oram)

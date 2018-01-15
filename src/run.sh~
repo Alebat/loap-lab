@@ -4,7 +4,7 @@ BT_CLIENT="./BrickClient"
 
 if [ "$#" -eq 0 ]
 	then
-		ARGS="-t b -a 50 -s 5 -d 160000"
+		ARGS="-t b -a 50 -s 5 -d 60000"
 	else
 		ARGS="$@"
 fi

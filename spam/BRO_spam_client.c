@@ -39,25 +39,10 @@ uint32_t data_idx;
 
 /** ------------------------------------------- */
 const float EXPMEAN_FACTOR = 0.6;
-const float TIME_PERIOD = 0.005f;
-const float SNR_TIME_PERIOD = 0.1f;
 const float SNR_R = 0.056f/2.0f;
+const float SONAR_SAMPLING = 0.2f;
 
-
-float snr_expmean = 0;
-float snr_last_expmean = 0;
-float snr_dist_derivative = 0;
-float snr_vehicle_speed = 0;
-float snr_vehicle_angular_speed = 0;
-float snr_vehicle_angular_speed_last = 0;
-float snr_vehicle_angular_speed_int = 0;
-float snr_vehicle_angular_speed_int_last = 0;
-float snr_atan = 0;
-float u1 = 0;
-float u1_int = 0;
-float u1_int_last = 0;
-float u1_last = 0;
-float u2 = 0;
+float sonar = 0;
 float left_ct = 10;
 float right_ct = 10;
 
@@ -112,10 +97,10 @@ int mcd_getSpeed(struct MotorControllerData mcd, int speedval) {
     return 0;
 }
 
-void mcd_onGetSpeed(struct MotorControllerData *mcd, int rev_count, float ref)
+void mcd_onGetSpeed(struct MotorControllerData *mcd, int rev_count, float ref, float etime5)
 {
     // Getting speed in rad/s
-    mcd->speed_deg = (rev_count - mcd->last_revcount)/TIME_PERIOD;
+    mcd->speed_deg = (rev_count - mcd->last_revcount)/etime5;
     mcd->last_revcount = rev_count;
     mcd->speed_rad = mcd->speed_deg * 3.14159265359f/180.0f;
 
@@ -209,19 +194,29 @@ TASK(MotorTask) {
     int speed_m1 = mcd_getSpeed(mcd1, speed_val);
     int speed_m2 = mcd_getSpeed(mcd2, speed_val);
 
+    //speed_m1 = speed_m2 =100;
+
     nxt_motor_set_speed(MOTOR_PORT, speed_m1, 1);
     nxt_motor_set_speed(MOTOR_PORT2, speed_m2, 1);
     TerminateTask();
 }
 
-
+uint32_t last_elapsed_time;
+float etime100 = 0;
+float dist_err = 0;
+float dist_err_last = 0;
+float u2 = 0;
+float u2_last = 0;
 /** Task responsible to sample the data regarding the motor during the simulation, and to send it to the PC.
  *  When the simulation is terminated, this task resets the status of the application and unlocks the Configuration
  *  Task.
  */
 TASK(SimulTask) {
     uint32_t elapsed_time = systick_get_ms()-init_time;
-	float sonar;
+
+    float etime5 = (elapsed_time - last_elapsed_time)/1000.0f;
+    last_elapsed_time = elapsed_time;
+
 
     if (elapsed_time >= get_duration(&sim_config))
     {
@@ -230,104 +225,53 @@ TASK(SimulTask) {
     }
     else
     {
-        // Motor1 ================================================
-
-        // Encoder reading
+        // Read Motors & sonar ================================================
         int rev_count1 = nxt_motor_get_count(MOTOR_PORT);
-
-        // Apply controller steps
-        mcd_onGetSpeed(&mcd1, rev_count1, left_ct);//10);
-
-
-        // Motor2 ================================================
-
-        // Encoder reading
         int rev_count2 = nxt_motor_get_count(MOTOR_PORT2);
-        // Apply controller steps
-        mcd_onGetSpeed(&mcd2, rev_count2, right_ct);//10);
 
 
 
-
-        // Sonar ================================================
-
-        // Vehicle spped & angular speed
-        snr_vehicle_speed = (mcd1.expmean + mcd2.expmean)*SNR_R/2;
-        snr_vehicle_angular_speed = (mcd1.expmean - mcd2.expmean)*SNR_R/TIME_PERIOD;
-
-        // Integration of angular speed 1/s -> y(k+1) = y(k) + T/2*(u(k+1) + u(k))
-        snr_vehicle_angular_speed_int = snr_vehicle_angular_speed_int_last + TIME_PERIOD/2*(snr_vehicle_angular_speed + snr_vehicle_angular_speed_last);
-        snr_vehicle_angular_speed_last = snr_vehicle_angular_speed;
-        snr_vehicle_angular_speed_int_last = snr_vehicle_angular_speed_int;
-
-
-        sonar = -1;
-        sonar_ms_count += 5;
-        if(sonar_ms_count >= sonar_read_ms)
+        etime100 += etime5;
+        if(etime100 >= SONAR_SAMPLING)
         {
-            // Sonar read
-            sonar = ecrobot_get_sonar_sensor(PORT_IN_USE)/100.0f;
+            sonar =ecrobot_get_sonar_sensor(PORT_IN_USE)/100.0f;
+            if(sonar > .6)
+                sonar = .6;
 
-            // Exponential mean
-            snr_expmean = updateExpMean(snr_expmean, sonar);
+            // Vehicle Controller ==================================================
+            dist_err = 0.35 - sonar;
+            u2 = ((etime100*7.8f + 52)*dist_err + (7.8f*etime100 - 52)*dist_err_last - (4*etime100 - 2.0f) * u2_last)/(4*etime100 + 2.0f);
+            dist_err_last = dist_err;
+            u2_last = u2;
 
-            // Derivative
-            snr_dist_derivative = (snr_expmean - snr_last_expmean)/SNR_TIME_PERIOD;
-            snr_last_expmean = snr_expmean;
-
-            // Atan
-            snr_atan = atan(snr_dist_derivative/(snr_vehicle_speed*SNR_TIME_PERIOD));
-
-            // Time update
-            sonar_ms_count -= sonar_read_ms;
+            etime100 -= SONAR_SAMPLING;
         }
 
-        // Ref speed ?
-        u1 = .10 - snr_vehicle_speed;
 
-        // Speed TF
-        u1_int = u1_int_last + 5.5f*TIME_PERIOD/2*(u1 + u1_last);
-        u1_last = u1;
-        u1_int_last = u1_int;
-
-        // Speed factor & saturation
-        u1 = saturation(u1/SNR_R, 0, 12);
+//        left_ct = 4;
+//        right_ct = 4;
+        left_ct = saturation((.2f - u2*.125f)/(2*SNR_R), 0, 12);
+        right_ct = saturation((.2f + u2*.125f)/(2*SNR_R), 0, 12);
 
 
-        u2 = saturation(4.3*(snr_atan - snr_vehicle_angular_speed_int)*TIME_PERIOD/SNR_R, -12, 12);
-
-
-        left_ct = saturation(u1 + u2, 0, 12);
-        right_ct = saturation(u1 - u2, 0, 12);
-
-
+        // Motor Controllers ==================================================
+        mcd_onGetSpeed(&mcd1, rev_count1, left_ct, etime5);
+        mcd_onGetSpeed(&mcd2, rev_count2, right_ct, etime5);
         // Send Data
-        send_buffered_data(elapsed_time, rev_count1); // 0
-        send_buffered_data(elapsed_time, (int)mcd1.speed_deg); // 1
-        send_buffered_data(elapsed_time, (int)mcd1.speed_rad); // 2
-        send_buffered_data(elapsed_time, (int)(100*mcd1.expmean)); // 3
-        send_buffered_data(elapsed_time, (int)(100*mcd1.err)); // 4
-        send_buffered_data(elapsed_time, (int)(mcd1.out)); // 5
+//        send_buffered_data(elapsed_time, rev_count1); // 0
+//        send_buffered_data(elapsed_time, (int)mcd1.speed_rad); // 1
+//        send_buffered_data(elapsed_time, (int)(100*mcd1.err)); // 2
+//        send_buffered_data(elapsed_time, (int)(mcd1.out)); // 3
+//
+//        send_buffered_data(elapsed_time, rev_count2); // 4
+//        send_buffered_data(elapsed_time, (int)mcd2.speed_rad); // 5
+//        send_buffered_data(elapsed_time, (int)(100*mcd2.err)); // 6
+//        send_buffered_data(elapsed_time, (int)(mcd2.out)); // 7
 
-        send_buffered_data(elapsed_time, rev_count2); // 6
-        send_buffered_data(elapsed_time, (int)mcd2.speed_deg); // 7
-        send_buffered_data(elapsed_time, (int)mcd2.speed_rad); // 8
-        send_buffered_data(elapsed_time, (int)(100*mcd2.expmean)); // 9
-        send_buffered_data(elapsed_time, (int)(100*mcd2.err)); // 10
-        send_buffered_data(elapsed_time, (int)(mcd2.out)); // 11
+        send_buffered_data(elapsed_time, (int)(100*sonar)); // 8
 
-        send_buffered_data(elapsed_time, (int)(100*sonar)); // 12
-        send_buffered_data(elapsed_time, (int)(100*snr_expmean)); // 13
-        send_buffered_data(elapsed_time, (int)(100*snr_dist_derivative)); // 14
-        send_buffered_data(elapsed_time, (int)(100*snr_vehicle_speed)); // 15
-        send_buffered_data(elapsed_time, (int)(100*snr_vehicle_angular_speed)); // 16
-        send_buffered_data(elapsed_time, (int)(100*snr_dist_derivative/snr_vehicle_speed)); // 17
-        send_buffered_data(elapsed_time, (int)(100*snr_atan)); // 18
-        send_buffered_data(elapsed_time, (int)(100*snr_vehicle_angular_speed)); // 19
-        send_buffered_data(elapsed_time, (int)(100*snr_vehicle_angular_speed_int)); // 20
-
-        send_buffered_data(elapsed_time, (int)(100*left_ct)); // 21
-        send_buffered_data(elapsed_time, (int)(100*right_ct)); // 22
+        send_buffered_data(elapsed_time, (int)(100*left_ct)); // 12
+        send_buffered_data(elapsed_time, (int)(100*right_ct)); // 13
         TerminateTask();
     }
 }
@@ -356,7 +300,8 @@ TASK(DisplayTask) {
             display_string(curr_config.sim_type == SIM_STEP ? "  Step" : "   Sin");
             display_goto_xy(0, 1);
             display_string("Amp:  ");
-            display_int((int) curr_config.data[AMP_IDX], 6);
+            //display_int((int) curr_config.data[AMP_IDX], 6);
+            display_int((int)(sonar*100.0f), 6);
             display_goto_xy(0, 2);
             display_string("Off:  ");
             display_int((int) curr_config.data[OFF_IDX], 6);

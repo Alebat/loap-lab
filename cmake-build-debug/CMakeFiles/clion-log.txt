@@ -1,0 +1,2 @@
+/usr/local/clion/bin/cmake/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /home/ubuntu/NXT/loap-lab
+/usr/local/clion/bin/cmake/bin/cmake: 1: /usr/local/clion/bin/cmake/bin/cmake: Syntax error: "(" unexpected

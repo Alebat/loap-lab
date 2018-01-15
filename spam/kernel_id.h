@@ -1,6 +1,6 @@
 /*
  *  kernel_id.h
- *  Mon Jan 08 15:37:54 2018
+ *  Mon Jan 15 14:53:38 2018
  *  SG Version 2.00
  *  sg.exe ./BRO_spam_client.oil -os=ECC2 -I../../nxtOSEK/ecrobot/../toppers_osek/sg/impl_oil -template=../../nxtOSEK/ecrobot/../toppers_osek/sg/lego_nxt.sgt
  */
